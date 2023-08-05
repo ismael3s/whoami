@@ -1,0 +1,13 @@
+{
+    "Header": {
+        "skills": "Skills",
+        "experiences": "Experiences",
+        "about": "About"
+    },
+    "About": {
+        "hello": "Hello",
+        "i'm": "I'm Ismael Santana",
+        "engineer": "Software Engineer",
+        "contact": "CONTACT"
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "Header": {
+    "skills": "Habilidades",
+    "experiences": "Experiências",
+    "about": "Sobre"
+  },
+  "About": {
+    "hello": "Olá",
+    "i'm": "Eu sou Ismael Santana",
+    "engineer": "Programador",
+    "contact": "Contato"
+  }
+}
