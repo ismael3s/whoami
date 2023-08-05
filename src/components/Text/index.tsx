@@ -1,4 +1,3 @@
-import { t } from "i18next";
 import { createElement } from "react";
 import { tv, VariantProps } from "tailwind-variants";
 
