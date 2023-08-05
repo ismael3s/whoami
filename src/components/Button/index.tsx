@@ -5,7 +5,7 @@ type Props = {
 } & VariantProps<typeof button>;
 
 const button = tv({
-  base: "py-2 px-8 rounded-xl text-tprimary ",
+  base: "py-2 px-8 rounded-xl text-tprimary hover:opacity-80 transition-all duration-300 ease-in-out",
   variants: {
     variant: {
       primary: "bg-tsecondary",
