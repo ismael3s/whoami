@@ -5,9 +5,9 @@ import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import Head from "next/head";
 
-export function generateStaticParams() {
-  return [{ locale: "en" }, { locale: "pt-br" }, { locale: "en-US" }];
-}
+// export function generateStaticParams() {
+//   return [{ locale: "en" }, { locale: "pt-br" }, { locale: "en-US" }];
+// }
 
 const inter = Inter({ subsets: ["latin"] });
 
