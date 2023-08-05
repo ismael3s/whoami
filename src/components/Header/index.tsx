@@ -6,7 +6,7 @@ import { tv } from "tailwind-variants";
 import { useRouter } from "next/navigation";
 
 const headerItem = tv({
-  base: "cursor-pointer  active:bg-red-500 transition-all duration-300 ease-in-out",
+  base: "cursor-pointer transition-all duration-300 ease-in-out",
   variants: {
     active: {
       true: "opacity-100",
