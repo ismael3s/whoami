@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "@/components/Button";
 import { Text } from "@/components/Text";
 import { SocialMedia } from "./SocialMedia";
