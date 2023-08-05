@@ -49,50 +49,50 @@ export const Header = ({ locale: currentLanguage }: Props) => {
   return (
     <header className="bg-bsecondary">
       <div className="flex items-center justify-between p-4 max-w-7xl m-auto">
-        <div className="flex items-center gap-2 text-tsecondary">
-          <span
+        <ul className="flex items-center gap-2 text-tsecondary">
+          <li
             className={headerItem({
               active: currentSection === HomeSectionEnum.ABOUT,
             })}
             onClick={() => handleSectionChange(HomeSectionEnum.ABOUT)}
           >
             {t("about")}
-          </span>
-          <span
+          </li>
+          <li
             className={headerItem({
               active: currentSection === HomeSectionEnum.SKILLS,
             })}
             onClick={() => handleSectionChange(HomeSectionEnum.SKILLS)}
           >
             {t("skills")}
-          </span>
-          <span
+          </li>
+          <li
             className={headerItem({
               active: currentSection === HomeSectionEnum.EXPERIENCES,
             })}
             onClick={() => handleSectionChange(HomeSectionEnum.EXPERIENCES)}
           >
             {t("experiences")}
-          </span>
-        </div>
-        <div className="flex items-center gap-5 text-tsecondary">
-          <span
+          </li>
+        </ul>
+        <ul className="flex items-center gap-5 text-tsecondary">
+          <li
             className={headerItem({
               active: currentLanguage === LanguageEnum.PT_BR,
             })}
             onClick={() => handleLanguageChange(LanguageEnum.PT_BR)}
           >
             PT
-          </span>
-          <span
+          </li>
+          <li
             className={headerItem({
               active: currentLanguage === LanguageEnum.EN,
             })}
             onClick={() => handleLanguageChange(LanguageEnum.EN)}
           >
             EN
-          </span>
-        </div>
+          </li>
+        </ul>
       </div>
     </header>
   );
