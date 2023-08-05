@@ -14,11 +14,13 @@ export const SocialMedia = () => {
         src={GithubSvg}
         alt="Github Logo"
         onClick={() => openInNewTab("https://github.com/ismael3s")}
+        className="cursor-pointer hover:opacity-80 transition-all duration-300 ease-in-out"
       />
       <Image
         src={LinkedinSvg}
         alt="Linkedin Logo"
         onClick={() => openInNewTab("https://linkedin.com/in/ismael3s")}
+        className="cursor-pointer hover:opacity-80 transition-all duration-300 ease-in-out"
       />
     </div>
   );
