@@ -1,4 +1,5 @@
 import { AboutMe } from "./components/AboutMe";
+import { Experiences } from "./components/Experiences";
 import { Whoami } from "./components/Whoami";
 
 type Props = {
@@ -15,6 +16,12 @@ export default function Home(_props: Props) {
       </div>
       <div className="w-full bg-bsecondary">
         <AboutMe />
+      </div>
+
+      <div className="h-40 w-full"></div>
+
+      <div className="w-full bg-bsecondary">
+        <Experiences />
       </div>
     </main>
   );

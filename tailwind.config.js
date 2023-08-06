@@ -13,6 +13,7 @@ module.exports = {
         bprimary: "#191D28",
         bsecondary: "#1E2130",
         "btn-primary": "#161922",
+        border: "#464C6C",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

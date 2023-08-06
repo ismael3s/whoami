@@ -14,6 +14,7 @@ const text = tv({
       base: "text-base",
       lg: "text-lg",
       xs: "text-xs",
+      exs: "text-[10px]",
     },
     fontColor: {
       primary: "text-tprimary",
@@ -38,6 +39,7 @@ const text = tv({
 type Props = {
   children: React.ReactNode;
   as?: "p" | "span" | "h2";
+  className?: string
 } & VariantProps<typeof text>;
 
 export const Text = ({
@@ -46,6 +48,7 @@ export const Text = ({
   weight,
   fontSize,
   fontColor,
+  className,
   my,
   ...props
 }: Props) => {
@@ -58,6 +61,7 @@ export const Text = ({
         my,
         weight,
         fontColor,
+        className
       }),
     },
     children
