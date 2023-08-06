@@ -14,8 +14,8 @@ export const Experience = ({ isOnRightSide, work, locale }: Props) => {
   return (
     <div
       className={twMerge(
-        "flex flex-col gap-y-2 w-40 md:w-72 lg:w-auto text-end ",
-        isOnRightSide ? "ml-4 md:ml-6 my-16 text-start" : "ml-auto mr-6"
+        "flex flex-col gap-y-2  md:w-72 lg:w-auto md:text-end ",
+        isOnRightSide ? " md:ml-6 my-8 md:my-16 md:text-start" : "ml-auto md:mr-6"
       )}
     >
       <Text
@@ -54,7 +54,7 @@ export const Experiences = () => {
         Experiences
       </Text>
 
-      <div className="grid grid-cols-2 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 ">
         {works
           .sort(
             (a, b) =>
@@ -65,7 +65,7 @@ export const Experiences = () => {
             <div
               key={work.id}
               className={
-                index % 2 === 0 ? `border-r-[1px]  border-r-border` : ""
+                index % 2 === 0 ? `md:border-r-[1px]  md:border-r-border` : ""
               }
             >
               <Experience
