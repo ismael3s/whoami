@@ -13,11 +13,11 @@ export const Experience = ({ isOnRightSide }: Props) => {
   return (
     <div
       className={twMerge(
-        "flex flex-col gap-y-2 w-40 text-end ",
+        "flex flex-col gap-y-2 w-40 md:w-72 lg:w-auto text-end ",
         isOnRightSide ? "ml-4 md:ml-6 mt-16 text-start" : "ml-auto mr-6"
       )}
     >
-      <Text weight="bold" fontSize="xs" fontColor="secondary" className="">
+      <Text weight="bold" fontSize="xs" fontColor="secondary" className="md:text-xl">
         Desenvolvedor FullStack
       </Text>
       <Text weight="bold" fontSize="exs" as={"span"}>
@@ -55,7 +55,7 @@ export const Experiences = () => {
           <div
             key={index}
             className={
-              index % 2 === 0 ? `border-r-[1px] opacity-80 border-r-border` : ""
+              index % 2 === 0 ? `border-r-[1px]  border-r-border` : ""
             }
           >
             <Experience isOnRightSide={index % 2 !== 0} />

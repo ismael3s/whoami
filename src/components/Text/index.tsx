@@ -8,13 +8,13 @@ const text = tv({
         md: "my-4",
     },
     fontSize: {
-      "heading-1": "text-base md:text-4xl leading-8 md:leading-10",
+      "heading-1": "text-base md:text-4xl leading-8",
       "body": "",
       sm: "text-sm md:text-base",
       base: "text-base",
       lg: "text-lg",
-      xs: "text-xs",
-      exs: "text-[10px]",
+      xs: "text-xs md:text-base",
+      exs: "text-[10px] md:text-base",
     },
     fontColor: {
       primary: "text-tprimary",
