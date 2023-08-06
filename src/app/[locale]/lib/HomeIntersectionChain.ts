@@ -78,9 +78,10 @@ class IsIntersectingSkillsHandler
   }
 
   handleRequest(request: HomeIntersectionSectionProps): HandlerResponse {
+
     if (
       request.skills?.intersectionRatio > 0.6 &&
-      request.experiences?.intersectionRatio < 0.8 &&
+      !request.experiences?.isIntersecting &&
       request.about?.intersectionRatio < 0.5
     )
       return HeaderSectionEnum.SKILLS;
@@ -105,7 +106,7 @@ class IsIntersectingExperienceHandler
   }
 
   handleRequest(request: HomeIntersectionSectionProps): HandlerResponse {
-    if (request.experiences?.intersectionRatio > 0.5)
+    if (request.experiences?.isIntersecting)
       return HeaderSectionEnum.EXPERIENCES;
     if (this.nextHandler) {
       return this.nextHandler.handleRequest(request);

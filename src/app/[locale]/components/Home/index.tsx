@@ -73,7 +73,7 @@ export default function HomeComponent({ works }: Props) {
         handleIntersectionChange(intersection);
       },
       {
-        threshold: 0.8,
+        threshold: 0.3,
       }
     );
 
