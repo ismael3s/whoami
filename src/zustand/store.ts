@@ -1,4 +1,4 @@
-import { HeaderSectionEnum } from "@/components/Header/HeaderSectionEnum";
+import { HeaderSectionEnum } from "@/app/components/Header/HeaderSectionEnum";
 import { RefObject } from "react";
 import { create } from "zustand";
 
@@ -10,11 +10,15 @@ type SectionsRef = {
     experiences: SectionRef;
 }
 
+
+
 type HeaderStore = {
   setActiveSection: (section: HeaderSectionEnum) => void;
   activeSection: HeaderSectionEnum;
   sectionsRefs: SectionsRef,
   setSectionRef: (sections: SectionsRef) => void;
+  setWorks: (works: any) => void;
+  works: any[];
 };
 
 export const useHeaderStore = create<HeaderStore>((set) => ({
@@ -23,7 +27,7 @@ export const useHeaderStore = create<HeaderStore>((set) => ({
   },
   activeSection: HeaderSectionEnum.ABOUT,
   setSectionRef(sections) {
-    set((state) => ({
+    set(() => ({
       sectionsRefs: sections,
     }));
   },
@@ -32,4 +36,10 @@ export const useHeaderStore = create<HeaderStore>((set) => ({
     experiences: null,
     skills: null,
   },
+  works: [],
+  setWorks(works) {
+    set(() => ({
+      works,
+    }));
+  }
 }));

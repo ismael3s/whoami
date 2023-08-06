@@ -1,9 +1,9 @@
-import { Header } from "@/components/Header";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import Head from "next/head";
+import { Header } from "../components/Header";
 
 // export function generateStaticParams() {
 //   return [{ locale: "en" }, { locale: "pt-br" }, { locale: "en-US" }];
@@ -23,7 +23,6 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  
   let messages;
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
@@ -38,7 +37,7 @@ export default async function RootLayout({
       </Head>
       <body className={`${inter.className} bg-bprimary`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Header locale={locale}/>
+          <Header locale={locale} />
           {children}
         </NextIntlClientProvider>
       </body>

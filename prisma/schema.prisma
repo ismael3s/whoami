@@ -1,0 +1,22 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model work {
+  id          Int       @id @default(autoincrement())
+  job_role    String
+  description String?
+  company     String
+  start_date  DateTime
+  end_date    DateTime?
+  is_hidden   Boolean   @default(false)
+  language    String
+}

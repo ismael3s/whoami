@@ -1,5 +1,5 @@
-import { Text } from "@/components/Text";
-import { TextDivider } from "@/components/TextDivider";
+import { Text } from "@/app/components/Text";
+import { TextDivider } from "@/app/components/TextDivider";
 import { useTranslations } from "next-intl";
 
 export const AboutMe = () => {

@@ -1,4 +1,4 @@
-import { HeaderSectionEnum } from "@/components/Header/HeaderSectionEnum";
+import { HeaderSectionEnum } from "../../components/Header/HeaderSectionEnum";
 
 interface IHandler<TIn, TOut> {
   setNextHandler(handler: IHandler<TIn, TOut>): IHandler<TIn, TOut>;

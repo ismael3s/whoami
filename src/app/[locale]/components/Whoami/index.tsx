@@ -1,8 +1,8 @@
-import { Text } from "@/components/Text";
+import { Text } from "@/app/components/Text";
 import { SocialMedia } from "./SocialMedia";
 import { ImageMe } from "./ImageMe";
 import { useTranslations } from "next-intl";
-import { TextDivider } from "@/components/TextDivider";
+import { TextDivider } from "@/app/components/TextDivider";
 
 
 type Props = {};
