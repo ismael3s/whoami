@@ -15,5 +15,8 @@
     "first-paragraph": "Meus primeiros contatos com programação ocorreram em 2016, durante o ensino médio. Desde então, venho me aprofundando cada vez mais nessa área fascinante. Em 2021, dei meus primeiros passos como desenvolvedor, focando principalmente no frontend. No final desse mesmo ano, decidi explorar o mundo do backend, evoluindo para um engenheiro fullstack, com ênfase na área de backend.",
     "second-paragraph": "No processo de resolução de problemas, sou entusiasta das tecnologias mais recentes e aplico técnicas que elevam a qualidade do código, tais como testes automatizados, Arquitetura Hexagonal e revisões de código detalhadas. Além disso, a implementação de CI/CD faz parte da minha abordagem, tornando a manutenção das soluções propostas mais eficiente.",
     "third-paragraph": "Além do mundo da programação, tenho a natação como um dos meus hobbies, que me ajuda a recarregar as energias. Passo também parte do meu tempo livre estudando tópicos relacionados à TI, mantendo-me sempre atualizado. Por fim, não há nada mais valioso para mim do que passar momentos preciosos com minha família."
+  },
+  "Experience": {
+    "experience": "Experiência"
   }
 }

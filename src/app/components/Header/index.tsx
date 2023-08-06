@@ -30,12 +30,19 @@ export const Header = ({ locale: currentLanguage }: Props) => {
   const t = useTranslations("Header");
   const activeSection = useHeaderStore((state) => state.activeSection);
   const sectionsRefs = useHeaderStore((state) => state.sectionsRefs);
+  const blockOptions: {
+    [key in HeaderSectionEnum]: ScrollLogicalPosition;
+  } = {
+    [HeaderSectionEnum.ABOUT]: "center",
+    [HeaderSectionEnum.SKILLS]: "center",
+    [HeaderSectionEnum.EXPERIENCES]: "start",
+  };
 
   function handleSectionChange(section: HeaderSectionEnum) {
     if (activeSection === section) return;
     sectionsRefs[section]?.current?.scrollIntoView({
       behavior: "smooth",
-      block: "center",
+      block: blockOptions[section] || "center",
     });
   }
 

@@ -3,7 +3,7 @@ import { useHeaderStore } from "@/zustand/store";
 import { work } from "@prisma/client";
 import { twMerge } from "tailwind-merge";
 import { formatWorkingPeriod } from "../../lib/formatWorkData";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 type Props = {
   work: work;
@@ -14,8 +14,8 @@ export const Experience = ({ isOnRightSide, work, locale }: Props) => {
   return (
     <div
       className={twMerge(
-        "flex flex-col gap-y-2  md:w-72 lg:w-auto md:text-end ",
-        isOnRightSide ? " md:ml-6 my-8 md:my-16 md:text-start" : "ml-auto md:mr-6"
+        "flex flex-col gap-y-2  xl:w-auto xl:text-end ",
+        isOnRightSide ? " xl:ml-6 my-8 xl:my-16 xl:text-start" : "ml-auto xl:mr-6"
       )}
     >
       <Text
@@ -43,6 +43,7 @@ export const Experience = ({ isOnRightSide, work, locale }: Props) => {
 export const Experiences = () => {
   const works = useHeaderStore((state) => state.works);
   const locale = useLocale();
+  const t = useTranslations("Experience");
   return (
     <div className="max-w-7xl mx-auto  px-4 py-8">
       <Text
@@ -51,10 +52,10 @@ export const Experiences = () => {
         weight="bold"
         className="text-center mb-6"
       >
-        Experiences
+        {t("experience")}
       </Text>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 ">
+      <div className="grid grid-cols-1 xl:grid-cols-2 ">
         {works
           .sort(
             (a, b) =>
@@ -65,7 +66,7 @@ export const Experiences = () => {
             <div
               key={work.id}
               className={
-                index % 2 === 0 ? `md:border-r-[1px]  md:border-r-border` : ""
+                index % 2 === 0 ? `xl:border-r-[1px]  xl:border-r-border` : ""
               }
             >
               <Experience
