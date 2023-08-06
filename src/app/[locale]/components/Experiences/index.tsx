@@ -10,7 +10,7 @@ type Props = {
   isOnRightSide?: boolean;
   locale: string;
 };
-export const Experience = ({ isOnRightSide, work }: Props) => {
+export const Experience = ({ isOnRightSide, work, locale }: Props) => {
   return (
     <div
       className={twMerge(
@@ -30,7 +30,7 @@ export const Experience = ({ isOnRightSide, work }: Props) => {
         {work.company}
       </Text>
       <Text weight="medium" fontSize="exs" as={"span"} className="">
-        {formatWorkingPeriod(work.start_date, work.end_date)}
+        {formatWorkingPeriod(work.start_date, work.end_date, locale)}
       </Text>
 
       <Text fontSize="exs" as={"span"} className="">
