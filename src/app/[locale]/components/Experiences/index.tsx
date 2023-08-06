@@ -56,11 +56,11 @@ export const Experiences = () => {
 
       <div className="grid grid-cols-2 ">
         {works
-          // .sort(
-          //   (a, b) =>
-          //     new Date(b.start_date).getTime() -
-          //     new Date(a.start_date).getTime()
-          // )
+          .sort(
+            (a, b) =>
+              new Date(b.start_date).getTime() -
+              new Date(a.start_date).getTime()
+          )
           .map((work, index) => (
             <div
               key={work.id}

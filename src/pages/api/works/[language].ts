@@ -6,9 +6,6 @@ export default async function (
   response: NextApiResponse
 ) {
   const { language } = request.query;
-  console.log(request.query)
-  console.log(language);
-  
   const works = await prisma.work.findMany({
     where: {
       language: language as string,

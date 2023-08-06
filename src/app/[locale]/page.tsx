@@ -13,7 +13,7 @@ export default async function HomePage(props: Props) {
     `${getAbsoluteUrl()}/api/works/${props.params.locale}`,
     {
       next: {
-        revalidate: 60,
+        revalidate: 3600,
       },
     }
   );
