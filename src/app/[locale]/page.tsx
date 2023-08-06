@@ -11,12 +11,10 @@ export default function Home(_props: Props) {
   return (
     <main className="min-h-screen">
       <div className="max-w-7xl mx-auto">
-      <Whoami />
-
+        <Whoami />
       </div>
       <div className="w-full bg-bsecondary">
-      <AboutMe />
-
+        <AboutMe />
       </div>
     </main>
   );
