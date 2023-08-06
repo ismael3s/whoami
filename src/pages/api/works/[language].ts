@@ -22,6 +22,9 @@ export default async function (
       end_date: true,
       start_date: true,
     },
+    orderBy: {
+      end_date: "desc",
+    }
   });
   return response.status(200).json(works);
 }
