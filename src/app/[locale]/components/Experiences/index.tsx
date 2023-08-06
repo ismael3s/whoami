@@ -55,18 +55,26 @@ export const Experiences = () => {
       </Text>
 
       <div className="grid grid-cols-2 ">
-        {works.map((work, index) => (
-          <div
-            key={work.id}
-            className={index % 2 === 0 ? `border-r-[1px]  border-r-border` : ""}
-          >
-            <Experience
-              isOnRightSide={index % 2 !== 0}
-              work={work}
-              locale={locale}
-            />
-          </div>
-        ))}
+        {works
+          .sort(
+            (a, b) =>
+              new Date(b.start_date).getTime() -
+              new Date(a.start_date).getTime()
+          )
+          .map((work, index) => (
+            <div
+              key={work.id}
+              className={
+                index % 2 === 0 ? `border-r-[1px]  border-r-border` : ""
+              }
+            >
+              <Experience
+                isOnRightSide={index % 2 !== 0}
+                work={work}
+                locale={locale}
+              />
+            </div>
+          ))}
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ export default async function (
       start_date: true,
     },
     orderBy: {
-      end_date: "desc",
+      end_date: "asc",
     }
   });
   return response.status(200).json(works);
