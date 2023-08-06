@@ -13,7 +13,7 @@ datasource db {
 model work {
   id          Int       @id @default(autoincrement())
   job_role    String
-  description String?
+  description String?  @db.VarChar(2000)
   company     String
   start_date  DateTime
   end_date    DateTime?
