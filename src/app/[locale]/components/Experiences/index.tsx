@@ -41,14 +41,24 @@ export const Experience = ({ isOnRightSide }: Props) => {
 export const Experiences = () => {
   return (
     <div className="max-w-7xl mx-auto  px-4 py-8">
-      <Text fontSize="heading-1" as="h2" weight="bold" className="text-center mb-6">
+      <Text
+        fontSize="heading-1"
+        as="h2"
+        weight="bold"
+        className="text-center mb-6"
+      >
         Experiences
       </Text>
 
       <div className="grid grid-cols-2 ">
         {Array.from({ length: 4 }).map((_, index) => (
-          <div className={index % 2 === 0 ? `border-r-[1px] opacity-80 border-r-border` : ""}>
-            <Experience key={index} isOnRightSide={index % 2 !== 0} />
+          <div
+            key={index}
+            className={
+              index % 2 === 0 ? `border-r-[1px] opacity-80 border-r-border` : ""
+            }
+          >
+            <Experience isOnRightSide={index % 2 !== 0} />
           </div>
         ))}
       </div>
