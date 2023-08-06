@@ -1,9 +1,9 @@
 "use client";
-
-import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { tv } from "tailwind-variants";
 import Link from "next/link";
+import { HeaderSectionEnum } from "./HeaderSectionEnum";
+import { useHeaderStore } from "@/zustand/store";
 
 const headerItem = tv({
   base: "cursor-pointer transition-all duration-300 ease-in-out",
@@ -22,49 +22,51 @@ const enum LanguageEnum {
   EN = "en",
 }
 
-const enum HomeSectionEnum {
-  ABOUT = "about",
-  SKILLS = "skills",
-  EXPERIENCES = "experiences",
-}
 type Props = {
   locale: string;
 };
 
 export const Header = ({ locale: currentLanguage }: Props) => {
   const t = useTranslations("Header");
-  const [currentSection, setCurrentSection] = useState(HomeSectionEnum.ABOUT);
+  const activeSection = useHeaderStore((state) => state.activeSection);
+  const sectionsRefs = useHeaderStore((state) => state.sectionsRefs);
 
-  function handleSectionChange(section: HomeSectionEnum) {
-    if (currentSection === section) return;
-    setCurrentSection(section);
+  function handleSectionChange(section: HeaderSectionEnum) {
+    if (activeSection === section) return;
+    sectionsRefs[section]?.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
   }
 
   return (
     <header className="bg-bsecondary sticky top-0 z-50">
       <div className="flex items-center justify-between p-4 max-w-7xl m-auto">
-        <ul className="flex items-center gap-2 text-tsecondary">
+        <ul
+          className="flex items-center gap-2 text-tsecondary"
+          key={activeSection}
+        >
           <li
             className={headerItem({
-              active: currentSection === HomeSectionEnum.ABOUT,
+              active: activeSection === HeaderSectionEnum.ABOUT,
             })}
-            onClick={() => handleSectionChange(HomeSectionEnum.ABOUT)}
+            onClick={() => handleSectionChange(HeaderSectionEnum.ABOUT)}
           >
             {t("about")}
           </li>
           <li
             className={headerItem({
-              active: currentSection === HomeSectionEnum.SKILLS,
+              active: activeSection === HeaderSectionEnum.SKILLS,
             })}
-            onClick={() => handleSectionChange(HomeSectionEnum.SKILLS)}
+            onClick={() => handleSectionChange(HeaderSectionEnum.SKILLS)}
           >
             {t("skills")}
           </li>
           <li
             className={headerItem({
-              active: currentSection === HomeSectionEnum.EXPERIENCES,
+              active: activeSection === HeaderSectionEnum.EXPERIENCES,
             })}
-            onClick={() => handleSectionChange(HomeSectionEnum.EXPERIENCES)}
+            onClick={() => handleSectionChange(HeaderSectionEnum.EXPERIENCES)}
           >
             {t("experiences")}
           </li>
@@ -75,7 +77,7 @@ export const Header = ({ locale: currentLanguage }: Props) => {
               active: currentLanguage === LanguageEnum.PT_BR,
             })}
           >
-            <Link href={`/${LanguageEnum.PT_BR}`}scroll={false}>
+            <Link href={`/${LanguageEnum.PT_BR}`} scroll={false}>
               PT
             </Link>
           </li>
