@@ -11,7 +11,7 @@ export const SocialMedia = () => {
 
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 my-4">
       <Image
         src={GithubSvg}
         alt="Github Logo"

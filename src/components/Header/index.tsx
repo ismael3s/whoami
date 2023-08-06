@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { tv } from "tailwind-variants";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const headerItem = tv({
   base: "cursor-pointer transition-all duration-300 ease-in-out",
@@ -33,7 +33,6 @@ type Props = {
 
 export const Header = ({ locale: currentLanguage }: Props) => {
   const t = useTranslations("Header");
-  const { push: goToPage} = useRouter();
   const [currentSection, setCurrentSection] = useState(HomeSectionEnum.ABOUT);
 
   function handleSectionChange(section: HomeSectionEnum) {
@@ -41,13 +40,8 @@ export const Header = ({ locale: currentLanguage }: Props) => {
     setCurrentSection(section);
   }
 
-  function handleLanguageChange(language: LanguageEnum) {
-    if (currentLanguage === language) return;
-    goToPage(language);
-  }
-
   return (
-    <header className="bg-bsecondary">
+    <header className="bg-bsecondary sticky top-0 z-50">
       <div className="flex items-center justify-between p-4 max-w-7xl m-auto">
         <ul className="flex items-center gap-2 text-tsecondary">
           <li
@@ -80,17 +74,19 @@ export const Header = ({ locale: currentLanguage }: Props) => {
             className={headerItem({
               active: currentLanguage === LanguageEnum.PT_BR,
             })}
-            onClick={() => handleLanguageChange(LanguageEnum.PT_BR)}
           >
-            PT
+            <Link href={`/${LanguageEnum.PT_BR}`}scroll={false}>
+              PT
+            </Link>
           </li>
           <li
             className={headerItem({
               active: currentLanguage === LanguageEnum.EN,
             })}
-            onClick={() => handleLanguageChange(LanguageEnum.EN)}
           >
-            EN
+            <Link href={`/${LanguageEnum.EN}`} scroll={false}>
+              EN
+            </Link>
           </li>
         </ul>
       </div>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export const Me = () => {
+export const ImageMe = () => {
   return (
     <Image
     

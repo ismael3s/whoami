@@ -37,7 +37,7 @@ const text = tv({
 
 type Props = {
   children: React.ReactNode;
-  as?: "p" | "span";
+  as?: "p" | "span" | "h2";
 } & VariantProps<typeof text>;
 
 export const Text = ({

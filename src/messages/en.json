@@ -1,13 +1,19 @@
 {
-    "Header": {
-        "skills": "Skills",
-        "experiences": "Experiences",
-        "about": "About"
-    },
-    "About": {
-        "hello": "Hello",
-        "i'm": "I'm Ismael Santana",
-        "engineer": "Software Engineer",
-        "contact": "CONTACT"
-    }
+  "Header": {
+    "skills": "Skills",
+    "experiences": "Experiences",
+    "about": "About"
+  },
+  "Whoami": {
+    "hello": "Hello",
+    "i'm": "I'm Ismael Santana",
+    "engineer": "Software Engineer",
+    "contact": "CONTACT"
+  },
+  "About": {
+    "about": "About me",
+    "first-paragraph": "My first experiences with programming occurred in 2016, during high school. Since then, I have been delving deeper into this fascinating field. In 2021, I took my initial steps as a developer, primarily focusing on the frontend. By the end of that same year, I decided to venture into the backend realm, evolving into a full-stack engineer with a concentration in backend development.",
+    "second-paragraph": "When it comes to problem-solving, I am an enthusiast for the latest technologies and employ techniques that enhance code quality, such as automated testing, Hexagonal Architecture, and meticulous code reviews. Additionally, the implementation of CI/CD is integral to my approach, making the maintenance of proposed solutions more efficient.",
+    "third-paragraph": "Beyond the realm of programming, swimming is one of my hobbies, aiding me in recharging my energies. I also dedicate part of my free time to studying topics related to IT, ensuring I stay continually updated. Ultimately, nothing holds more value to me than cherishing precious moments with my family."
+  }
 }
