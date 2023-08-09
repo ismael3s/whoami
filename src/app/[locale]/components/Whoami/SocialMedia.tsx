@@ -2,13 +2,12 @@
 import Image from "next/image";
 import GithubSvg from "../../.././../../public/Github.svg";
 import LinkedinSvg from "../../.././../../public/Linkedin.svg";
-import { BiLogoDevTo, BiLogoGmail } from "react-icons/bi";
+import { BiLogoDevTo, BiLogoGmail, BiLogoWhatsapp } from "react-icons/bi";
 export const SocialMedia = () => {
-  function openURL(url: string, target="_blank") {
+  function openURL(url: string, target = "_blank") {
     const win = window.open(url, target);
     win?.focus();
   }
-
 
   return (
     <div className="flex gap-4 my-4">
@@ -26,6 +25,11 @@ export const SocialMedia = () => {
       />
       <BiLogoGmail
         onClick={() => openURL("mailto:ismael.santana.dev@gmail.com", "_self")}
+        className="w-6 h-6 cursor-pointer hover:opacity-80 transition-all duration-300 ease-in-out"
+      />
+
+      <BiLogoWhatsapp
+        onClick={() => openURL("https://wa.me/+5511971994411")}
         className="w-6 h-6 cursor-pointer hover:opacity-80 transition-all duration-300 ease-in-out"
       />
 
