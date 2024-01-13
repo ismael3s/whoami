@@ -32,7 +32,7 @@ export default function HomeComponent({ works }: Props) {
       <div className="h-[480px] w-full" ref={skillsSectionRef}></div>
 
       <div className="w-full bg-bsecondary" ref={experiencesSectionRef}>
-        <Experiences />
+        <Experiences works={works} />
       </div>
     </main>
   );

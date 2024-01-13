@@ -10,7 +10,8 @@ type Props = {
 
 async function getWorks(locale: string) {
   try {
-    const response = await fetch(`${getAbsoluteUrl()}/api/works/${locale}`, {
+    const url = `${getAbsoluteUrl()}/api/works/${locale}`;
+    const response = await fetch(url, {
       next: {
         revalidate: 20,
       },
@@ -25,6 +26,5 @@ async function getWorks(locale: string) {
 
 export default async function HomePage(props: Props) {
   const works = await getWorks(props.params.locale);
-
   return <HomeComponent {...props} works={works} />;
 }

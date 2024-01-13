@@ -15,7 +15,9 @@ export const Experience = ({ isOnRightSide, work, locale }: Props) => {
     <div
       className={twMerge(
         "flex flex-col gap-y-2  xl:w-auto xl:text-end ",
-        isOnRightSide ? " xl:ml-6 my-8 xl:my-16 xl:text-start" : "ml-auto xl:mr-6"
+        isOnRightSide
+          ? " xl:ml-6 my-8 xl:my-16 xl:text-start"
+          : "ml-auto xl:mr-6"
       )}
     >
       <Text
@@ -40,8 +42,7 @@ export const Experience = ({ isOnRightSide, work, locale }: Props) => {
   );
 };
 
-export const Experiences = () => {
-  const works = useHeaderStore((state) => state.works);
+export const Experiences = ({ works }: { works: any[] }) => {
   const locale = useLocale();
   const t = useTranslations("Experience");
   return (
