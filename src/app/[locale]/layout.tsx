@@ -4,21 +4,18 @@ import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import Head from "next/head";
 import { Header } from "../components/Header";
-
-// export function generateStaticParams() {
-//   return [{ locale: "en" }, { locale: "pt-br" }, { locale: "en-US" }];
-// }
+import { notFound } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ismael Santana Portfolio",
-  description: "Ismael Santana Portfolio",
+  description: "Ismael Santana Portfolio"
 };
 
 export default async function RootLayout({
   children,
-  params: { locale },
+  params: { locale }
 }: {
   children: React.ReactNode;
   params: { locale: string };
@@ -27,7 +24,7 @@ export default async function RootLayout({
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
   } catch (error) {
-    // notFound();
+    notFound();
   }
 
   return (

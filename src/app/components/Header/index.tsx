@@ -10,16 +10,16 @@ const headerItem = tv({
   variants: {
     active: {
       true: "opacity-100",
-      false: "opacity-80",
-    },
+      false: "opacity-80"
+    }
   },
   defaultVariants: {
-    active: false,
-  },
+    active: false
+  }
 });
 const enum LanguageEnum {
   PT_BR = "pt-br",
-  EN = "en",
+  EN = "en"
 }
 
 type Props = {
@@ -35,14 +35,14 @@ export const Header = ({ locale: currentLanguage }: Props) => {
   } = {
     [HeaderSectionEnum.ABOUT]: "center",
     [HeaderSectionEnum.SKILLS]: "center",
-    [HeaderSectionEnum.EXPERIENCES]: "start",
+    [HeaderSectionEnum.EXPERIENCES]: "start"
   };
 
   function handleSectionChange(section: HeaderSectionEnum) {
     if (activeSection === section) return;
     sectionsRefs[section]?.current?.scrollIntoView({
       behavior: "smooth",
-      block: blockOptions[section] || "center",
+      block: blockOptions[section] || "center"
     });
   }
 
@@ -53,7 +53,7 @@ export const Header = ({ locale: currentLanguage }: Props) => {
           className="flex items-center gap-2 text-tsecondary"
           key={activeSection}
         >
-          <li
+          {/* <li
             className={headerItem({
               active: activeSection === HeaderSectionEnum.ABOUT,
             })}
@@ -76,12 +76,12 @@ export const Header = ({ locale: currentLanguage }: Props) => {
             onClick={() => handleSectionChange(HeaderSectionEnum.EXPERIENCES)}
           >
             {t("experiences")}
-          </li>
+          </li> */}
         </ul>
         <ul className="flex items-center gap-5 text-tsecondary">
           <li
             className={headerItem({
-              active: currentLanguage === LanguageEnum.PT_BR,
+              active: currentLanguage === LanguageEnum.PT_BR
             })}
           >
             <Link href={`/${LanguageEnum.PT_BR}`} scroll={false}>
@@ -90,7 +90,7 @@ export const Header = ({ locale: currentLanguage }: Props) => {
           </li>
           <li
             className={headerItem({
-              active: currentLanguage === LanguageEnum.EN,
+              active: currentLanguage === LanguageEnum.EN
             })}
           >
             <Link href={`/${LanguageEnum.EN}`} scroll={false}>
