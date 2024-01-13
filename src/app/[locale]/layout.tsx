@@ -11,12 +11,12 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ismael Santana Portfolio",
-  description: "Ismael Santana Portfolio"
+  description: "Ismael Santana Portfolio",
 };
 
 export default async function RootLayout({
   children,
-  params: { locale }
+  params: { locale },
 }: {
   children: React.ReactNode;
   params: { locale: string };
@@ -38,6 +38,7 @@ export default async function RootLayout({
           async
         />
       </Head>
+      <Script src="/static/scripts/new-relic.js" type="text/javascript" />
       <body className={`${inter.className} bg-bprimary`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header locale={locale} />
