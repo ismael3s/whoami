@@ -10,19 +10,15 @@ type Props = {
 
 async function getWorks(locale: string) {
   try {
-    const response = await fetch(
-      `${getAbsoluteUrl()}/api/works/${locale}`,
-      {
-        next: {
-          revalidate: 60,
-        },
-      }
-    );
-
+    const response = await fetch(`${getAbsoluteUrl()}/api/works/${locale}`, {
+      next: {
+        revalidate: 20,
+      },
+    });
     const works = await response.json();
     return works;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return [];
   }
 }
