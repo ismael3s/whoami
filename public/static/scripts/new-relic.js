@@ -18,7 +18,7 @@ NREUM.info = {
   licenseKey: "NRJS-1384285b84a12a9753d",
   applicationID: "1103304012",
   sa: 1,
-}; /*! For license information please see nr-loader-rum-1.250.0.min.js.LICENSE.txt */
+}; /*! For license information please see nr-loader-spa-1.250.0.min.js.LICENSE.txt */
 (() => {
   var e,
     t,
@@ -26,21 +26,21 @@ NREUM.info = {
       234: (e, t, r) => {
         "use strict";
         r.d(t, {
-          P_: () => v,
+          P_: () => m,
           Mt: () => b,
           C5: () => s,
           DL: () => A,
-          OP: () => S,
-          lF: () => T,
-          Yu: () => x,
-          Dg: () => m,
+          OP: () => D,
+          lF: () => O,
+          Yu: () => E,
+          Dg: () => v,
           CX: () => c,
-          GE: () => _,
-          sU: () => R,
+          GE: () => x,
+          sU: () => N,
         });
         var n = r(8632),
           i = r(9567);
-        const a = {
+        const o = {
             beacon: n.ce.beacon,
             errorBeacon: n.ce.errorBeacon,
             licenseKey: void 0,
@@ -59,19 +59,19 @@ NREUM.info = {
             transactionName: void 0,
             tNamePlain: void 0,
           },
-          o = {};
+          a = {};
         function s(e) {
           if (!e)
             throw new Error("All info objects require an agent identifier!");
-          if (!o[e]) throw new Error("Info for ".concat(e, " was never set"));
-          return o[e];
+          if (!a[e]) throw new Error("Info for ".concat(e, " was never set"));
+          return a[e];
         }
         function c(e, t) {
           if (!e)
             throw new Error("All info objects require an agent identifier!");
-          o[e] = (0, i.D)(t, a);
+          a[e] = (0, i.D)(t, o);
           const r = (0, n.ek)(e);
-          r && (r.info = o[e]);
+          r && (r.info = a[e]);
         }
         const u = (e) => {
           if (!e || "string" != typeof e) return !1;
@@ -85,7 +85,7 @@ NREUM.info = {
         var d = r(7056),
           l = r(50);
         const f = "[data-nr-mask]",
-          g = () => {
+          h = () => {
             const e = {
               mask_selector: "*",
               block_selector: "[data-nr-block]",
@@ -209,22 +209,22 @@ NREUM.info = {
             };
           },
           p = {},
-          h = "All configuration objects require an agent identifier!";
-        function v(e) {
-          if (!e) throw new Error(h);
+          g = "All configuration objects require an agent identifier!";
+        function m(e) {
+          if (!e) throw new Error(g);
           if (!p[e])
             throw new Error("Configuration for ".concat(e, " was never set"));
           return p[e];
         }
-        function m(e, t) {
-          if (!e) throw new Error(h);
-          p[e] = (0, i.D)(t, g());
+        function v(e, t) {
+          if (!e) throw new Error(g);
+          p[e] = (0, i.D)(t, h());
           const r = (0, n.ek)(e);
           r && (r.init = p[e]);
         }
         function b(e, t) {
-          if (!e) throw new Error(h);
-          var r = v(e);
+          if (!e) throw new Error(g);
+          var r = m(e);
           if (r) {
             for (var n = t.split("."), i = 0; i < n.length - 1; i++)
               if ("object" != typeof (r = r[n[i]])) return;
@@ -250,7 +250,7 @@ NREUM.info = {
             throw new Error("LoaderConfig for ".concat(e, " was never set"));
           return w[e];
         }
-        function _(e, t) {
+        function x(e, t) {
           if (!e)
             throw new Error(
               "All loader-config objects require an agent identifier!"
@@ -259,49 +259,49 @@ NREUM.info = {
           const r = (0, n.ek)(e);
           r && (r.loader_config = w[e]);
         }
-        const x = (0, n.mF)().o;
-        var E = r(385),
-          D = r(6818);
-        const k = {
-            buildEnv: D.Re,
+        const E = (0, n.mF)().o;
+        var _ = r(385),
+          T = r(6818);
+        const S = {
+            buildEnv: T.Re,
             customTransaction: void 0,
             disabled: !1,
-            distMethod: D.gF,
+            distMethod: T.gF,
             isolatedBacklog: !1,
             loaderType: void 0,
             maxBytes: 3e4,
             offset: Math.floor(
-              E._A?.performance?.timeOrigin ||
-                E._A?.performance?.timing?.navigationStart ||
+              _._A?.performance?.timeOrigin ||
+                _._A?.performance?.timing?.navigationStart ||
                 Date.now()
             ),
             onerror: void 0,
-            origin: "" + E._A.location,
+            origin: "" + _._A.location,
             ptid: void 0,
             releaseIds: {},
             session: void 0,
             xhrWrappable:
               "function" ==
-              typeof E._A.XMLHttpRequest?.prototype?.addEventListener,
-            version: D.q4,
+              typeof _._A.XMLHttpRequest?.prototype?.addEventListener,
+            version: T.q4,
             denyList: void 0,
           },
-          j = {};
-        function S(e) {
+          R = {};
+        function D(e) {
           if (!e)
             throw new Error("All runtime objects require an agent identifier!");
-          if (!j[e])
+          if (!R[e])
             throw new Error("Runtime for ".concat(e, " was never set"));
-          return j[e];
+          return R[e];
         }
-        function R(e, t) {
+        function N(e, t) {
           if (!e)
             throw new Error("All runtime objects require an agent identifier!");
-          j[e] = (0, i.D)(t, k);
+          R[e] = (0, i.D)(t, S);
           const r = (0, n.ek)(e);
-          r && (r.runtime = j[e]);
+          r && (r.runtime = R[e]);
         }
-        function T(e) {
+        function O(e) {
           return (function (e) {
             try {
               const t = s(e);
@@ -330,15 +330,15 @@ NREUM.info = {
                 Object.getPrototypeOf(t),
                 Object.getOwnPropertyDescriptors(t)
               ),
-              a = 0 === Object.keys(r).length ? e : r;
-            for (let o in a)
-              if (void 0 !== e[o])
+              o = 0 === Object.keys(r).length ? e : r;
+            for (let a in o)
+              if (void 0 !== e[a])
                 try {
-                  Array.isArray(e[o]) && Array.isArray(t[o])
-                    ? (r[o] = Array.from(new Set([...e[o], ...t[o]])))
-                    : "object" == typeof e[o] && "object" == typeof t[o]
-                    ? (r[o] = i(e[o], t[o]))
-                    : (r[o] = e[o]);
+                  Array.isArray(e[a]) && Array.isArray(t[a])
+                    ? (r[a] = Array.from(new Set([...e[a], ...t[a]])))
+                    : "object" == typeof e[a] && "object" == typeof t[a]
+                    ? (r[a] = i(e[a], t[a]))
+                    : (r[a] = e[a]);
                 } catch (e) {
                   (0, n.Z)(
                     "An error occurred while setting a property of a Configurable",
@@ -353,23 +353,27 @@ NREUM.info = {
       },
       6818: (e, t, r) => {
         "use strict";
-        r.d(t, { Re: () => i, gF: () => a, q4: () => n });
+        r.d(t, { Re: () => i, gF: () => o, lF: () => a, q4: () => n });
         const n = "1.250.0",
           i = "PROD",
-          a = "CDN";
+          o = "CDN",
+          a = "2.0.0-alpha.11";
       },
       385: (e, t, r) => {
         "use strict";
         r.d(t, {
-          Nk: () => d,
-          Tt: () => s,
-          _A: () => a,
-          cv: () => l,
-          iS: () => o,
+          FN: () => c,
+          IF: () => l,
+          LW: () => a,
+          Nk: () => h,
+          Tt: () => u,
+          _A: () => o,
+          cv: () => p,
+          iS: () => s,
           il: () => n,
-          ux: () => c,
+          ux: () => d,
           v6: () => i,
-          w1: () => u,
+          w1: () => f,
         });
         const n = "undefined" != typeof window && !!window.document,
           i =
@@ -380,7 +384,7 @@ NREUM.info = {
               ("undefined" != typeof globalThis &&
                 globalThis instanceof WorkerGlobalScope &&
                 globalThis.navigator instanceof WorkerNavigator)),
-          a = n
+          o = n
             ? window
             : "undefined" != typeof WorkerGlobalScope &&
               (("undefined" != typeof self &&
@@ -389,30 +393,29 @@ NREUM.info = {
                 ("undefined" != typeof globalThis &&
                   globalThis instanceof WorkerGlobalScope &&
                   globalThis)),
-          o =
-            (a?.document?.readyState,
-            Boolean("hidden" === a?.document?.visibilityState)),
-          s = (a?.location, /iPad|iPhone|iPod/.test(a.navigator?.userAgent)),
-          c = s && "undefined" == typeof SharedWorker,
-          u =
-            ((() => {
-              const e = a.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);
-              Array.isArray(e) && e.length >= 2 && e[1];
-            })(),
-            Boolean(n && window.document.documentMode)),
-          d = !!a.navigator?.sendBeacon,
-          l = Math.floor(
-            a?.performance?.timeOrigin ||
-              a?.performance?.timing?.navigationStart ||
+          a = "complete" === o?.document?.readyState,
+          s = Boolean("hidden" === o?.document?.visibilityState),
+          c = "" + o?.location,
+          u = /iPad|iPhone|iPod/.test(o.navigator?.userAgent),
+          d = u && "undefined" == typeof SharedWorker,
+          l = (() => {
+            const e = o.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);
+            return Array.isArray(e) && e.length >= 2 ? +e[1] : 0;
+          })(),
+          f = Boolean(n && window.document.documentMode),
+          h = !!o.navigator?.sendBeacon,
+          p = Math.floor(
+            o?.performance?.timeOrigin ||
+              o?.performance?.timing?.navigationStart ||
               Date.now()
           );
       },
       1117: (e, t, r) => {
         "use strict";
-        r.d(t, { w: () => a });
+        r.d(t, { w: () => o });
         var n = r(50);
         const i = { agentIdentifier: "", ee: void 0 };
-        class a {
+        class o {
           constructor(e) {
             try {
               if ("object" != typeof e)
@@ -434,11 +437,11 @@ NREUM.info = {
         r.d(t, { L: () => d, R: () => c });
         var n = r(8325),
           i = r(1284),
-          a = r(4322),
-          o = r(3325);
+          o = r(4322),
+          a = r(3325);
         const s = {};
         function c(e, t) {
-          const r = { staged: !1, priority: o.p[t] || 0 };
+          const r = { staged: !1, priority: a.p[t] || 0 };
           u(e), s[e].get(t) || s[e].set(t, r);
         }
         function u(e) {
@@ -453,15 +456,15 @@ NREUM.info = {
               arguments.length > 1 && void 0 !== arguments[1]
                 ? arguments[1]
                 : "feature";
-          if ((u(e), !e || !s[e].get(t))) return o(t);
+          if ((u(e), !e || !s[e].get(t))) return a(t);
           s[e].get(t).staged = !0;
           const r = [...s[e]];
-          function o(t) {
+          function a(t) {
             const r = e ? n.ee.get(e) : n.ee,
-              o = a.X.handlers;
-            if (r.backlog && o) {
+              a = o.X.handlers;
+            if (r.backlog && a) {
               var s = r.backlog[t],
-                c = o[t];
+                c = a[t];
               if (c) {
                 for (var u = 0; s && u < s.length; ++u) l(s[u], c);
                 (0, i.D)(c, function (e, t) {
@@ -470,7 +473,7 @@ NREUM.info = {
                   });
                 });
               }
-              delete o[t], (r.backlog[t] = null), r.emit("drain-" + t, []);
+              delete a[t], (r.backlog[t] = null), r.emit("drain-" + t, []);
             }
           }
           r.every((e) => {
@@ -480,7 +483,7 @@ NREUM.info = {
             (r.sort((e, t) => e[1].priority - t[1].priority),
             r.forEach((t) => {
               let [r] = t;
-              s[e].delete(r), o(r);
+              s[e].delete(r), a(r);
             }));
         }
         function l(e, t) {
@@ -489,9 +492,9 @@ NREUM.info = {
             var n = e[0];
             if (r[0] === n) {
               var i = r[1],
-                a = e[3],
-                o = e[2];
-              i.apply(a, o);
+                o = e[3],
+                a = e[2];
+              i.apply(o, a);
             }
           });
         }
@@ -501,8 +504,8 @@ NREUM.info = {
         r.d(t, { A: () => c, ee: () => u });
         var n = r(8632),
           i = r(2210),
-          a = r(234);
-        class o {
+          o = r(234);
+        class a {
           constructor(e) {
             this.contextId = e;
           }
@@ -515,32 +518,32 @@ NREUM.info = {
               d = {},
               f = !1;
             try {
-              f = 16 === r.length && (0, a.OP)(r).isolatedBacklog;
+              f = 16 === r.length && (0, o.OP)(r).isolatedBacklog;
             } catch (e) {}
-            var g = {
-              on: h,
-              addEventListener: h,
+            var h = {
+              on: g,
+              addEventListener: g,
               removeEventListener: function (e, t) {
                 var r = n[e];
                 if (!r) return;
                 for (var i = 0; i < r.length; i++) r[i] === t && r.splice(i, 1);
               },
-              emit: function (e, r, n, i, a) {
-                !1 !== a && (a = !0);
+              emit: function (e, r, n, i, o) {
+                !1 !== o && (o = !0);
                 if (u.aborted && !i) return;
-                t && a && t.emit(e, r, n);
-                for (var o = p(n), c = v(e), d = c.length, l = 0; l < d; l++)
-                  c[l].apply(o, r);
+                t && o && t.emit(e, r, n);
+                for (var a = p(n), c = m(e), d = c.length, l = 0; l < d; l++)
+                  c[l].apply(a, r);
                 var f = b()[s[e]];
-                f && f.push([g, e, r, o]);
-                return o;
+                f && f.push([h, e, r, a]);
+                return a;
               },
-              get: m,
-              listeners: v,
+              get: v,
+              listeners: m,
               context: p,
               buffer: function (e, t) {
                 const r = b();
-                if (((t = t || "feature"), g.aborted)) return;
+                if (((t = t || "feature"), h.aborted)) return;
                 Object.entries(e || {}).forEach((e) => {
                   let [n, i] = e;
                   (s[i] = t), t in r || (r[t] = []);
@@ -558,25 +561,25 @@ NREUM.info = {
                 ? t.backlog
                 : {},
             };
-            return g;
+            return h;
             function p(e) {
-              return e && e instanceof o
+              return e && e instanceof a
                 ? e
                 : e
-                ? (0, i.X)(e, c, () => new o(c))
-                : new o(c);
+                ? (0, i.X)(e, c, () => new a(c))
+                : new a(c);
             }
-            function h(e, t) {
-              n[e] = v(e).concat(t);
+            function g(e, t) {
+              n[e] = m(e).concat(t);
             }
-            function v(e) {
+            function m(e) {
               return n[e] || [];
             }
-            function m(t) {
-              return (d[t] = d[t] || e(g, t));
+            function v(t) {
+              return (d[t] = d[t] || e(h, t));
             }
             function b() {
-              return g.backlog;
+              return h.backlog;
             }
           })(void 0, "globalEE"),
           d = (0, n.fP)();
@@ -589,59 +592,59 @@ NREUM.info = {
         "use strict";
         r.d(t, { E: () => n, p: () => i });
         var n = r(8325).ee.get("handle");
-        function i(e, t, r, i, a) {
-          a
-            ? (a.buffer([e], i), a.emit(e, t, r))
+        function i(e, t, r, i, o) {
+          o
+            ? (o.buffer([e], i), o.emit(e, t, r))
             : (n.buffer([e], i), n.emit(e, t, r));
         }
       },
       4322: (e, t, r) => {
         "use strict";
-        r.d(t, { X: () => a });
+        r.d(t, { X: () => o });
         var n = r(5546);
-        a.on = o;
-        var i = (a.handlers = {});
-        function a(e, t, r, a) {
-          o(a || n.E, i, e, t, r);
+        o.on = a;
+        var i = (o.handlers = {});
+        function o(e, t, r, o) {
+          a(o || n.E, i, e, t, r);
         }
-        function o(e, t, r, i, a) {
-          a || (a = "feature"), e || (e = n.E);
-          var o = (t[a] = t[a] || {});
-          (o[r] = o[r] || []).push([e, i]);
+        function a(e, t, r, i, o) {
+          o || (o = "feature"), e || (e = n.E);
+          var a = (t[o] = t[o] || {});
+          (a[r] = a[r] || []).push([e, i]);
         }
       },
       3239: (e, t, r) => {
         "use strict";
-        r.d(t, { bP: () => s, iz: () => c, m$: () => o });
+        r.d(t, { bP: () => s, iz: () => c, m$: () => a });
         var n = r(385);
         let i = !1,
-          a = !1;
+          o = !1;
         try {
           const e = {
             get passive() {
               return (i = !0), !1;
             },
             get signal() {
-              return (a = !0), !1;
+              return (o = !0), !1;
             },
           };
           n._A.addEventListener("test", null, e),
             n._A.removeEventListener("test", null, e);
         } catch (e) {}
-        function o(e, t) {
-          return i || a ? { capture: !!e, passive: i, signal: t } : !!e;
+        function a(e, t) {
+          return i || o ? { capture: !!e, passive: i, signal: t } : !!e;
         }
         function s(e, t) {
           let r =
               arguments.length > 2 && void 0 !== arguments[2] && arguments[2],
             n = arguments.length > 3 ? arguments[3] : void 0;
-          window.addEventListener(e, t, o(r, n));
+          window.addEventListener(e, t, a(r, n));
         }
         function c(e, t) {
           let r =
               arguments.length > 2 && void 0 !== arguments[2] && arguments[2],
             n = arguments.length > 3 ? arguments[3] : void 0;
-          document.addEventListener(e, t, o(r, n));
+          document.addEventListener(e, t, a(r, n));
         }
       },
       3117: (e, t, r) => {
@@ -651,13 +654,13 @@ NREUM.info = {
       },
       4402: (e, t, r) => {
         "use strict";
-        r.d(t, { Rl: () => o, ky: () => s });
+        r.d(t, { Ht: () => u, M: () => c, Rl: () => a, ky: () => s });
         var n = r(385);
         const i = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";
-        function a(e, t) {
+        function o(e, t) {
           return e ? 15 & e[t] : (16 * Math.random()) | 0;
         }
-        function o() {
+        function a() {
           const e = n._A?.crypto || n._A?.msCrypto;
           let t,
             r = 0;
@@ -669,9 +672,9 @@ NREUM.info = {
               .split("")
               .map((e) =>
                 "x" === e
-                  ? a(t, r++).toString(16)
+                  ? o(t, r++).toString(16)
                   : "y" === e
-                  ? ((3 & a()) | 8).toString(16)
+                  ? ((3 & o()) | 8).toString(16)
                   : e
               )
               .join("")
@@ -682,25 +685,31 @@ NREUM.info = {
           let r,
             i = 0;
           t && t.getRandomValues && (r = t.getRandomValues(new Uint8Array(e)));
-          const o = [];
-          for (var s = 0; s < e; s++) o.push(a(r, i++).toString(16));
-          return o.join("");
+          const a = [];
+          for (var s = 0; s < e; s++) a.push(o(r, i++).toString(16));
+          return a.join("");
+        }
+        function c() {
+          return s(16);
+        }
+        function u() {
+          return s(32);
         }
       },
       7056: (e, t, r) => {
         "use strict";
         r.d(t, {
           Bq: () => n,
-          Hb: () => a,
+          Hb: () => o,
           IK: () => c,
           oD: () => i,
           uT: () => s,
-          wO: () => o,
+          wO: () => a,
         });
         const n = "NRBA",
           i = 144e5,
-          a = 18e5,
-          o = {
+          o = 18e5,
+          a = {
             PAUSE: "session-pause",
             RESET: "session-reset",
             RESUME: "session-resume",
@@ -716,6 +725,39 @@ NREUM.info = {
         }
         r.d(t, { z: () => n });
       },
+      7243: (e, t, r) => {
+        "use strict";
+        r.d(t, { e: () => i });
+        var n = r(385);
+        function i(e) {
+          if (0 === (e || "").indexOf("data:")) return { protocol: "data" };
+          try {
+            const t = new URL(e, location.href),
+              r = {
+                port: t.port,
+                hostname: t.hostname,
+                pathname: t.pathname,
+                search: t.search,
+                protocol: t.protocol.slice(0, t.protocol.indexOf(":")),
+                sameOrigin:
+                  t.protocol === n._A?.location?.protocol &&
+                  t.host === n._A?.location?.host,
+              };
+            return (
+              (r.port && "" !== r.port) ||
+                ("http:" === t.protocol && (r.port = "80"),
+                "https:" === t.protocol && (r.port = "443")),
+              r.pathname && "" !== r.pathname
+                ? r.pathname.startsWith("/") ||
+                  (r.pathname = "/".concat(r.pathname))
+                : (r.pathname = "/"),
+              r
+            );
+          } catch (e) {
+            return {};
+          }
+        }
+      },
       50: (e, t, r) => {
         "use strict";
         function n(e, t) {
@@ -729,15 +771,15 @@ NREUM.info = {
         r.d(t, { N: () => d, T: () => l });
         var n = r(8325),
           i = r(5546),
-          a = r(3325),
-          o = r(385);
+          o = r(3325),
+          a = r(385);
         const s = "newrelic";
         const c = {
-            stn: [a.D.sessionTrace],
-            err: [a.D.jserrors, a.D.metrics],
-            ins: [a.D.pageAction],
-            spa: [a.D.spa],
-            sr: [a.D.sessionReplay, a.D.sessionTrace],
+            stn: [o.D.sessionTrace],
+            err: [o.D.jserrors, o.D.metrics],
+            ins: [o.D.pageAction],
+            spa: [o.D.spa],
+            sr: [o.D.sessionReplay, o.D.sessionTrace],
           },
           u = new Set();
         function d(e, t) {
@@ -771,7 +813,7 @@ NREUM.info = {
                     ? arguments[0]
                     : {};
                 try {
-                  o._A.dispatchEvent(new CustomEvent(s, { detail: e }));
+                  a._A.dispatchEvent(new CustomEvent(s, { detail: e }));
                 } catch (e) {}
               })({ loaded: !0 })));
         }
@@ -809,7 +851,7 @@ NREUM.info = {
       },
       4351: (e, t, r) => {
         "use strict";
-        r.d(t, { P: () => a });
+        r.d(t, { P: () => o });
         var n = r(8325);
         const i = () => {
           const e = new WeakSet();
@@ -821,7 +863,7 @@ NREUM.info = {
             return r;
           };
         };
-        function a(e) {
+        function o(e) {
           try {
             return JSON.stringify(e, i());
           } catch (e) {
@@ -833,18 +875,18 @@ NREUM.info = {
       },
       3960: (e, t, r) => {
         "use strict";
-        r.d(t, { KB: () => o, b2: () => a });
+        r.d(t, { KB: () => a, b2: () => o });
         var n = r(3239);
         function i() {
           return (
             "undefined" == typeof document || "complete" === document.readyState
           );
         }
-        function a(e, t) {
+        function o(e, t) {
           if (i()) return e();
           (0, n.bP)("load", e, t);
         }
-        function o(e) {
+        function a(e) {
           if (i()) return e();
           (0, n.iz)("DOMContentLoaded", e);
         }
@@ -853,17 +895,17 @@ NREUM.info = {
         "use strict";
         r.d(t, {
           EZ: () => d,
-          ce: () => a,
+          ce: () => o,
           ek: () => u,
-          fP: () => o,
+          fP: () => a,
           gG: () => l,
           h5: () => c,
           mF: () => s,
         });
         var n = r(7894),
           i = r(385);
-        const a = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net" };
-        function o() {
+        const o = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net" };
+        function a() {
           return (
             i._A.NREUM || (i._A.NREUM = {}),
             void 0 === i._A.newrelic && (i._A.newrelic = i._A.NREUM),
@@ -871,7 +913,7 @@ NREUM.info = {
           );
         }
         function s() {
-          let e = o();
+          let e = a();
           return (
             e.o ||
               (e.o = {
@@ -889,37 +931,37 @@ NREUM.info = {
           );
         }
         function c(e, t) {
-          let r = o();
+          let r = a();
           (r.initializedAgents ??= {}),
             (t.initializedAt = { ms: (0, n.z)(), date: new Date() }),
             (r.initializedAgents[e] = t);
         }
         function u(e) {
-          let t = o();
+          let t = a();
           return t.initializedAgents?.[e];
         }
         function d(e, t) {
-          o()[e] = t;
+          a()[e] = t;
         }
         function l() {
           return (
             (function () {
-              let e = o();
+              let e = a();
               const t = e.info || {};
-              e.info = { beacon: a.beacon, errorBeacon: a.errorBeacon, ...t };
+              e.info = { beacon: o.beacon, errorBeacon: o.errorBeacon, ...t };
             })(),
             (function () {
-              let e = o();
+              let e = a();
               const t = e.init || {};
               e.init = { ...t };
             })(),
             s(),
             (function () {
-              let e = o();
+              let e = a();
               const t = e.loader_config || {};
               e.loader_config = { ...t };
             })(),
-            o()
+            a()
           );
         }
       },
@@ -943,20 +985,564 @@ NREUM.info = {
           );
         }
       },
+      1214: (e, t, r) => {
+        "use strict";
+        r.d(t, {
+          em: () => b,
+          u5: () => R,
+          QU: () => O,
+          _L: () => P,
+          Gm: () => H,
+          Lg: () => L,
+          BV: () => G,
+          Kf: () => Y,
+        });
+        var n = r(8325),
+          i = r(3117);
+        const o = "nr@original:".concat(i.a);
+        var a = Object.prototype.hasOwnProperty,
+          s = !1;
+        function c(e, t) {
+          return (
+            e || (e = n.ee),
+            (r.inPlace = function (e, t, n, i, o) {
+              n || (n = "");
+              const a = "-" === n.charAt(0);
+              for (let s = 0; s < t.length; s++) {
+                const c = t[s],
+                  u = e[c];
+                d(u) || (e[c] = r(u, a ? c + n : n, i, c, o));
+              }
+            }),
+            (r.flag = o),
+            r
+          );
+          function r(t, r, n, s, c) {
+            return d(t)
+              ? t
+              : (r || (r = ""),
+                (nrWrapper[o] = t),
+                (function (e, t, r) {
+                  if (Object.defineProperty && Object.keys)
+                    try {
+                      return (
+                        Object.keys(e).forEach(function (r) {
+                          Object.defineProperty(t, r, {
+                            get: function () {
+                              return e[r];
+                            },
+                            set: function (t) {
+                              return (e[r] = t), t;
+                            },
+                          });
+                        }),
+                        t
+                      );
+                    } catch (e) {
+                      u([e], r);
+                    }
+                  for (var n in e) a.call(e, n) && (t[n] = e[n]);
+                })(t, nrWrapper, e),
+                nrWrapper);
+            function nrWrapper() {
+              var o, a, d, l;
+              try {
+                (a = this),
+                  (o = [...arguments]),
+                  (d = "function" == typeof n ? n(o, a) : n || {});
+              } catch (t) {
+                u([t, "", [o, a, s], d], e);
+              }
+              i(r + "start", [o, a, s], d, c);
+              try {
+                return (l = t.apply(a, o));
+              } catch (e) {
+                throw (i(r + "err", [o, a, e], d, c), e);
+              } finally {
+                i(r + "end", [o, a, l], d, c);
+              }
+            }
+          }
+          function i(r, n, i, o) {
+            if (!s || t) {
+              var a = s;
+              s = !0;
+              try {
+                e.emit(r, n, i, t, o);
+              } catch (t) {
+                u([t, r, n, i], e);
+              }
+              s = a;
+            }
+          }
+        }
+        function u(e, t) {
+          t || (t = n.ee);
+          try {
+            t.emit("internal-error", e);
+          } catch (e) {}
+        }
+        function d(e) {
+          return !(e && "function" == typeof e && e.apply && !e[o]);
+        }
+        var l = r(2210),
+          f = r(385);
+        const h = {},
+          p = f._A.XMLHttpRequest,
+          g = "addEventListener",
+          m = "removeEventListener",
+          v = "nr@wrapped:".concat(n.A);
+        function b(e) {
+          var t = (function (e) {
+            return (e || n.ee).get("events");
+          })(e);
+          if (h[t.debugId]++) return t;
+          h[t.debugId] = 1;
+          var r = c(t, !0);
+          function i(e) {
+            r.inPlace(e, [g, m], "-", o);
+          }
+          function o(e, t) {
+            return e[1];
+          }
+          return (
+            "getPrototypeOf" in Object &&
+              (f.il && y(document, i), y(f._A, i), y(p.prototype, i)),
+            t.on(g + "-start", function (e, t) {
+              var n = e[1];
+              if (
+                null !== n &&
+                ("function" == typeof n || "object" == typeof n)
+              ) {
+                var i = (0, l.X)(n, v, function () {
+                  var e = {
+                    object: function () {
+                      if ("function" != typeof n.handleEvent) return;
+                      return n.handleEvent.apply(n, arguments);
+                    },
+                    function: n,
+                  }[typeof n];
+                  return e ? r(e, "fn-", null, e.name || "anonymous") : n;
+                });
+                this.wrapped = e[1] = i;
+              }
+            }),
+            t.on(m + "-start", function (e) {
+              e[1] = this.wrapped || e[1];
+            }),
+            t
+          );
+        }
+        function y(e, t) {
+          let r = e;
+          for (
+            ;
+            "object" == typeof r && !Object.prototype.hasOwnProperty.call(r, g);
+
+          )
+            r = Object.getPrototypeOf(r);
+          for (
+            var n = arguments.length, i = new Array(n > 2 ? n - 2 : 0), o = 2;
+            o < n;
+            o++
+          )
+            i[o - 2] = arguments[o];
+          r && t(r, ...i);
+        }
+        var w = "fetch-",
+          A = w + "body-",
+          x = ["arrayBuffer", "blob", "json", "text", "formData"],
+          E = f._A.Request,
+          _ = f._A.Response,
+          T = "prototype";
+        const S = {};
+        function R(e) {
+          const t = (function (e) {
+            return (e || n.ee).get("fetch");
+          })(e);
+          if (!(E && _ && f._A.fetch)) return t;
+          if (S[t.debugId]++) return t;
+          function r(e, r, i) {
+            var o = e[r];
+            "function" == typeof o &&
+              (e[r] = function () {
+                var e,
+                  r = [...arguments],
+                  a = {};
+                t.emit(i + "before-start", [r], a),
+                  a[n.A] && a[n.A].dt && (e = a[n.A].dt);
+                var s = o.apply(this, r);
+                return (
+                  t.emit(i + "start", [r, e], s),
+                  s.then(
+                    function (e) {
+                      return t.emit(i + "end", [null, e], s), e;
+                    },
+                    function (e) {
+                      throw (t.emit(i + "end", [e], s), e);
+                    }
+                  )
+                );
+              });
+          }
+          return (
+            (S[t.debugId] = 1),
+            x.forEach((e) => {
+              r(E[T], e, A), r(_[T], e, A);
+            }),
+            r(f._A, "fetch", w),
+            t.on(w + "end", function (e, r) {
+              var n = this;
+              if (r) {
+                var i = r.headers.get("content-length");
+                null !== i && (n.rxSize = i), t.emit(w + "done", [null, r], n);
+              } else t.emit(w + "done", [e], n);
+            }),
+            t
+          );
+        }
+        const D = {},
+          N = ["pushState", "replaceState"];
+        function O(e) {
+          const t = (function (e) {
+            return (e || n.ee).get("history");
+          })(e);
+          return (
+            !f.il ||
+              D[t.debugId]++ ||
+              ((D[t.debugId] = 1), c(t).inPlace(window.history, N, "-")),
+            t
+          );
+        }
+        var I = r(3239);
+        const C = {},
+          j = ["appendChild", "insertBefore", "replaceChild"];
+        function P(e) {
+          const t = (function (e) {
+            return (e || n.ee).get("jsonp");
+          })(e);
+          if (!f.il || C[t.debugId]) return t;
+          C[t.debugId] = !0;
+          var r = c(t),
+            i = /[?&](?:callback|cb)=([^&#]+)/,
+            o = /(.*)\.([^.]+)/,
+            a = /^(\w+)(\.|$)(.*)$/;
+          function s(e, t) {
+            if (!e) return t;
+            const r = e.match(a),
+              n = r[1];
+            return s(r[3], t[n]);
+          }
+          return (
+            r.inPlace(Node.prototype, j, "dom-"),
+            t.on("dom-start", function (e) {
+              !(function (e) {
+                if (
+                  !e ||
+                  "string" != typeof e.nodeName ||
+                  "script" !== e.nodeName.toLowerCase()
+                )
+                  return;
+                if ("function" != typeof e.addEventListener) return;
+                var n = ((a = e.src), (c = a.match(i)), c ? c[1] : null);
+                var a, c;
+                if (!n) return;
+                var u = (function (e) {
+                  var t = e.match(o);
+                  if (t && t.length >= 3)
+                    return { key: t[2], parent: s(t[1], window) };
+                  return { key: e, parent: window };
+                })(n);
+                if ("function" != typeof u.parent[u.key]) return;
+                var d = {};
+                function l() {
+                  t.emit("jsonp-end", [], d),
+                    e.removeEventListener("load", l, (0, I.m$)(!1)),
+                    e.removeEventListener("error", f, (0, I.m$)(!1));
+                }
+                function f() {
+                  t.emit("jsonp-error", [], d),
+                    t.emit("jsonp-end", [], d),
+                    e.removeEventListener("load", l, (0, I.m$)(!1)),
+                    e.removeEventListener("error", f, (0, I.m$)(!1));
+                }
+                r.inPlace(u.parent, [u.key], "cb-", d),
+                  e.addEventListener("load", l, (0, I.m$)(!1)),
+                  e.addEventListener("error", f, (0, I.m$)(!1)),
+                  t.emit("new-jsonp", [e.src], d);
+              })(e[0]);
+            }),
+            t
+          );
+        }
+        const k = {};
+        function H(e) {
+          const t = (function (e) {
+            return (e || n.ee).get("mutation");
+          })(e);
+          if (!f.il || k[t.debugId]) return t;
+          k[t.debugId] = !0;
+          var r = c(t),
+            i = f._A.MutationObserver;
+          return (
+            i &&
+              ((window.MutationObserver = function (e) {
+                return this instanceof i
+                  ? new i(r(e, "fn-"))
+                  : i.apply(this, arguments);
+              }),
+              (MutationObserver.prototype = i.prototype)),
+            t
+          );
+        }
+        const M = {};
+        function L(e) {
+          const t = (function (e) {
+            return (e || n.ee).get("promise");
+          })(e);
+          if (M[t.debugId]) return t;
+          M[t.debugId] = !0;
+          var r = t.context,
+            i = c(t),
+            a = f._A.Promise;
+          return (
+            a &&
+              (function () {
+                function e(r) {
+                  var n = t.context(),
+                    o = i(r, "executor-", n, null, !1);
+                  const s = Reflect.construct(a, [o], e);
+                  return (
+                    (t.context(s).getCtx = function () {
+                      return n;
+                    }),
+                    s
+                  );
+                }
+                (f._A.Promise = e),
+                  Object.defineProperty(e, "name", { value: "Promise" }),
+                  (e.toString = function () {
+                    return a.toString();
+                  }),
+                  Object.setPrototypeOf(e, a),
+                  ["all", "race"].forEach(function (r) {
+                    const n = a[r];
+                    e[r] = function (e) {
+                      let i = !1;
+                      [...(e || [])].forEach((e) => {
+                        this.resolve(e).then(a("all" === r), a(!1));
+                      });
+                      const o = n.apply(this, arguments);
+                      return o;
+                      function a(e) {
+                        return function () {
+                          t.emit("propagate", [null, !i], o, !1, !1),
+                            (i = i || !e);
+                        };
+                      }
+                    };
+                  }),
+                  ["resolve", "reject"].forEach(function (r) {
+                    const n = a[r];
+                    e[r] = function (e) {
+                      const r = n.apply(this, arguments);
+                      return (
+                        e !== r && t.emit("propagate", [e, !0], r, !1, !1), r
+                      );
+                    };
+                  }),
+                  (e.prototype = a.prototype);
+                const n = a.prototype.then;
+                (a.prototype.then = function () {
+                  var e = this,
+                    o = r(e);
+                  o.promise = e;
+                  for (
+                    var a = arguments.length, s = new Array(a), c = 0;
+                    c < a;
+                    c++
+                  )
+                    s[c] = arguments[c];
+                  (s[0] = i(s[0], "cb-", o, null, !1)),
+                    (s[1] = i(s[1], "cb-", o, null, !1));
+                  const u = n.apply(this, s);
+                  return (
+                    (o.nextPromise = u),
+                    t.emit("propagate", [e, !0], u, !1, !1),
+                    u
+                  );
+                }),
+                  (a.prototype.then[o] = n),
+                  t.on("executor-start", function (e) {
+                    (e[0] = i(e[0], "resolve-", this, null, !1)),
+                      (e[1] = i(e[1], "resolve-", this, null, !1));
+                  }),
+                  t.on("executor-err", function (e, t, r) {
+                    e[1](r);
+                  }),
+                  t.on("cb-end", function (e, r, n) {
+                    t.emit("propagate", [n, !0], this.nextPromise, !1, !1);
+                  }),
+                  t.on("propagate", function (e, r, n) {
+                    (this.getCtx && !r) ||
+                      (this.getCtx = function () {
+                        if (e instanceof Promise) var r = t.context(e);
+                        return r && r.getCtx ? r.getCtx() : this;
+                      });
+                  });
+              })(),
+            t
+          );
+        }
+        const z = {},
+          F = "setTimeout",
+          B = "setInterval",
+          U = "clearTimeout",
+          Z = "-start",
+          V = "-",
+          q = [F, "setImmediate", B, U, "clearImmediate"];
+        function G(e) {
+          const t = (function (e) {
+            return (e || n.ee).get("timer");
+          })(e);
+          if (z[t.debugId]++) return t;
+          z[t.debugId] = 1;
+          var r = c(t);
+          return (
+            r.inPlace(f._A, q.slice(0, 2), F + V),
+            r.inPlace(f._A, q.slice(2, 3), B + V),
+            r.inPlace(f._A, q.slice(3), U + V),
+            t.on(B + Z, function (e, t, n) {
+              e[0] = r(e[0], "fn-", null, n);
+            }),
+            t.on(F + Z, function (e, t, n) {
+              (this.method = n),
+                (this.timerDuration = isNaN(e[1]) ? 0 : +e[1]),
+                (e[0] = r(e[0], "fn-", this, n));
+            }),
+            t
+          );
+        }
+        var W = r(50);
+        const X = {},
+          K = ["open", "send"];
+        function Y(e) {
+          var t = e || n.ee;
+          const r = (function (e) {
+            return (e || n.ee).get("xhr");
+          })(t);
+          if (X[r.debugId]++) return r;
+          (X[r.debugId] = 1), b(t);
+          var i = c(r),
+            o = f._A.XMLHttpRequest,
+            a = f._A.MutationObserver,
+            s = f._A.Promise,
+            u = f._A.setInterval,
+            d = "readystatechange",
+            l = [
+              "onload",
+              "onerror",
+              "onabort",
+              "onloadstart",
+              "onloadend",
+              "onprogress",
+              "ontimeout",
+            ],
+            h = [],
+            p = (f._A.XMLHttpRequest = function (e) {
+              const t = new o(e),
+                n = r.context(t);
+              try {
+                r.emit("new-xhr", [t], n),
+                  t.addEventListener(
+                    d,
+                    ((a = n),
+                    function () {
+                      var e = this;
+                      e.readyState > 3 &&
+                        !a.resolved &&
+                        ((a.resolved = !0), r.emit("xhr-resolved", [], e)),
+                        i.inPlace(e, l, "fn-", A);
+                    }),
+                    (0, I.m$)(!1)
+                  );
+              } catch (e) {
+                (0, W.Z)("An error occurred while intercepting XHR", e);
+                try {
+                  r.emit("internal-error", [e]);
+                } catch (e) {}
+              }
+              var a;
+              return t;
+            });
+          function g(e, t) {
+            i.inPlace(t, ["onreadystatechange"], "fn-", A);
+          }
+          if (
+            ((function (e, t) {
+              for (var r in e) t[r] = e[r];
+            })(o, p),
+            (p.prototype = o.prototype),
+            i.inPlace(p.prototype, K, "-xhr-", A),
+            r.on("send-xhr-start", function (e, t) {
+              g(e, t),
+                (function (e) {
+                  h.push(e),
+                    a && (m ? m.then(w) : u ? u(w) : ((v = -v), (y.data = v)));
+                })(t);
+            }),
+            r.on("open-xhr-start", g),
+            a)
+          ) {
+            var m = s && s.resolve();
+            if (!u && !s) {
+              var v = 1,
+                y = document.createTextNode(v);
+              new a(w).observe(y, { characterData: !0 });
+            }
+          } else
+            t.on("fn-end", function (e) {
+              (e[0] && e[0].type === d) || w();
+            });
+          function w() {
+            for (var e = 0; e < h.length; e++) g(0, h[e]);
+            h.length && (h = []);
+          }
+          function A(e, t) {
+            return t;
+          }
+          return r;
+        }
+      },
+      7825: (e, t, r) => {
+        "use strict";
+        r.d(t, { t: () => n });
+        const n = r(3325).D.ajax;
+      },
+      6660: (e, t, r) => {
+        "use strict";
+        r.d(t, { t: () => n });
+        const n = r(3325).D.jserrors;
+      },
       3081: (e, t, r) => {
         "use strict";
         r.d(t, {
-          gF: () => a,
+          gF: () => o,
           mY: () => i,
           t9: () => n,
           vz: () => s,
-          xS: () => o,
+          xS: () => a,
         });
         const n = r(3325).D.metrics,
           i = "sm",
-          a = "cm",
-          o = "storeSupportabilityMetrics",
+          o = "cm",
+          a = "storeSupportabilityMetrics",
           s = "storeEventMetrics";
+      },
+      4649: (e, t, r) => {
+        "use strict";
+        r.d(t, { t: () => n });
+        const n = r(3325).D.pageAction;
       },
       7633: (e, t, r) => {
         "use strict";
@@ -967,6 +1553,119 @@ NREUM.info = {
         "use strict";
         r.d(t, { t: () => n });
         const n = r(3325).D.pageViewTiming;
+      },
+      7144: (e, t, r) => {
+        "use strict";
+        r.d(t, {
+          J0: () => l,
+          Mi: () => d,
+          Vb: () => o,
+          Ye: () => s,
+          fm: () => c,
+          i9: () => a,
+          t9: () => i,
+          u0: () => u,
+        });
+        var n = r(7056);
+        const i = r(3325).D.sessionReplay,
+          o = 0.12,
+          a = {
+            DomContentLoaded: 0,
+            Load: 1,
+            FullSnapshot: 2,
+            IncrementalSnapshot: 3,
+            Meta: 4,
+            Custom: 5,
+          },
+          s = 1e6,
+          c = 64e3,
+          u = { [n.IK.ERROR]: 15e3, [n.IK.FULL]: 3e5, [n.IK.OFF]: 0 },
+          d = {
+            RESET: { message: "Session was reset", sm: "Reset" },
+            IMPORT: { message: "Recorder failed to import", sm: "Import" },
+            TOO_MANY: { message: "429: Too Many Requests", sm: "Too-Many" },
+            TOO_BIG: { message: "Payload was too large", sm: "Too-Big" },
+            CROSS_TAB: {
+              message: "Session Entity was set to OFF on another tab",
+              sm: "Cross-Tab",
+            },
+            ENTITLEMENTS: {
+              message: "Session Replay is not allowed and will not be started",
+              sm: "Entitlement",
+            },
+          },
+          l = 5e3;
+      },
+      3614: (e, t, r) => {
+        "use strict";
+        r.d(t, {
+          BST_RESOURCE: () => i,
+          END: () => s,
+          FEATURE_NAME: () => n,
+          FN_END: () => u,
+          FN_START: () => c,
+          PUSH_STATE: () => d,
+          RESOURCE: () => o,
+          START: () => a,
+        });
+        const n = r(3325).D.sessionTrace,
+          i = "bstResource",
+          o = "resource",
+          a = "-start",
+          s = "-end",
+          c = "fn" + a,
+          u = "fn" + s,
+          d = "pushState";
+      },
+      7836: (e, t, r) => {
+        "use strict";
+        r.d(t, {
+          BODY: () => x,
+          CB_END: () => E,
+          CB_START: () => u,
+          END: () => A,
+          FEATURE_NAME: () => i,
+          FETCH: () => T,
+          FETCH_BODY: () => v,
+          FETCH_DONE: () => m,
+          FETCH_START: () => g,
+          FN_END: () => c,
+          FN_START: () => s,
+          INTERACTION: () => f,
+          INTERACTION_API: () => d,
+          INTERACTION_EVENTS: () => o,
+          JSONP_END: () => b,
+          JSONP_NODE: () => p,
+          JS_TIME: () => _,
+          MAX_TIMER_BUDGET: () => a,
+          REMAINING: () => l,
+          SPA_NODE: () => h,
+          START: () => w,
+          originalSetTimeout: () => y,
+        });
+        var n = r(234);
+        const i = r(3325).D.spa,
+          o = ["click", "submit", "keypress", "keydown", "keyup", "change"],
+          a = 999,
+          s = "fn-start",
+          c = "fn-end",
+          u = "cb-start",
+          d = "api-ixn-",
+          l = "remaining",
+          f = "interaction",
+          h = "spaNode",
+          p = "jsonpNode",
+          g = "fetch-start",
+          m = "fetch-done",
+          v = "fetch-body-",
+          b = "jsonp-end",
+          y = n.Yu.ST,
+          w = "-start",
+          A = "-end",
+          x = "-body",
+          E = "cb" + A,
+          _ = "jsTime",
+          T = "fetch";
       },
       5938: (e, t, r) => {
         "use strict";
@@ -987,17 +1686,17 @@ NREUM.info = {
         r.d(t, { j: () => b });
         var n = r(3325),
           i = r(234),
-          a = r(5546),
-          o = r(8325),
+          o = r(5546),
+          a = r(8325),
           s = r(7894),
           c = r(8e3),
           u = r(3960),
           d = r(385),
           l = r(50),
           f = r(3081),
-          g = r(8632);
+          h = r(8632);
         function p() {
-          const e = (0, g.gG)();
+          const e = (0, h.gG)();
           [
             "setErrorHandler",
             "finished",
@@ -1031,23 +1730,23 @@ NREUM.info = {
                   i++
                 )
                   n[i - 1] = arguments[i];
-                let a = [];
+                let o = [];
                 return (
                   Object.values(e.initializedAgents).forEach((e) => {
-                    e.exposed && e.api[t] && a.push(e.api[t](...n));
+                    e.exposed && e.api[t] && o.push(e.api[t](...n));
                   }),
-                  a.length > 1 ? a : a[0]
+                  o.length > 1 ? o : o[0]
                 );
               })(t, ...n);
             };
           });
         }
-        var h = r(2825);
-        const v = (e) => {
+        var g = r(2825);
+        const m = (e) => {
           const t = e.startsWith("http");
           (e += "/"), (r.p = t ? e : "https://" + e);
         };
-        let m = !1;
+        let v = !1;
         function b(e) {
           let t =
               arguments.length > 1 && void 0 !== arguments[1]
@@ -1058,47 +1757,47 @@ NREUM.info = {
             {
               init: w,
               info: A,
-              loader_config: _,
-              runtime: x = { loaderType: b },
-              exposed: E = !0,
+              loader_config: x,
+              runtime: E = { loaderType: b },
+              exposed: _ = !0,
             } = t;
-          const D = (0, g.gG)();
-          A || ((w = D.init), (A = D.info), (_ = D.loader_config)),
+          const T = (0, h.gG)();
+          A || ((w = T.init), (A = T.info), (x = T.loader_config)),
             (0, i.Dg)(e.agentIdentifier, w || {}),
-            (0, i.GE)(e.agentIdentifier, _ || {}),
+            (0, i.GE)(e.agentIdentifier, x || {}),
             (A.jsAttributes ??= {}),
             d.v6 && (A.jsAttributes.isWorker = !0),
             (0, i.CX)(e.agentIdentifier, A);
-          const k = (0, i.P_)(e.agentIdentifier),
-            j = [A.beacon, A.errorBeacon];
-          m ||
-            (k.proxy.assets && (v(k.proxy.assets), j.push(k.proxy.assets)),
-            k.proxy.beacon && j.push(k.proxy.beacon),
+          const S = (0, i.P_)(e.agentIdentifier),
+            R = [A.beacon, A.errorBeacon];
+          v ||
+            (S.proxy.assets && (m(S.proxy.assets), R.push(S.proxy.assets)),
+            S.proxy.beacon && R.push(S.proxy.beacon),
             p(),
-            (0, g.EZ)("activatedFeatures", h.T)),
-            (x.denyList = [
-              ...(k.ajax.deny_list || []),
-              ...(k.ajax.block_internal ? j : []),
+            (0, h.EZ)("activatedFeatures", g.T)),
+            (E.denyList = [
+              ...(S.ajax.deny_list || []),
+              ...(S.ajax.block_internal ? R : []),
             ]),
-            (0, i.sU)(e.agentIdentifier, x),
+            (0, i.sU)(e.agentIdentifier, E),
             void 0 === e.api &&
               (e.api = (function (e, t) {
                 t || (0, c.R)(e, "api");
-                const g = {};
-                var p = o.ee.get(e),
-                  h = p.get("tracer"),
-                  v = "api-",
-                  m = v + "ixn-";
-                function b(t, r, n, a) {
-                  const o = (0, i.C5)(e);
+                const h = {};
+                var p = a.ee.get(e),
+                  g = p.get("tracer"),
+                  m = "api-",
+                  v = m + "ixn-";
+                function b(t, r, n, o) {
+                  const a = (0, i.C5)(e);
                   return (
                     null === r
-                      ? delete o.jsAttributes[t]
+                      ? delete a.jsAttributes[t]
                       : (0, i.CX)(e, {
-                          ...o,
-                          jsAttributes: { ...o.jsAttributes, [t]: r },
+                          ...a,
+                          jsAttributes: { ...a.jsAttributes, [t]: r },
                         }),
-                    A(v, n, !0, a || null === r ? "session" : void 0)(t, r)
+                    A(m, n, !0, o || null === r ? "session" : void 0)(t, r)
                   );
                 }
                 function y() {}
@@ -1108,20 +1807,20 @@ NREUM.info = {
                   "addToTrace",
                   "addRelease",
                 ].forEach((e) => {
-                  g[e] = A(v, e, !0, "api");
+                  h[e] = A(m, e, !0, "api");
                 }),
-                  (g.addPageAction = A(v, "addPageAction", !0, n.D.pageAction)),
-                  (g.setCurrentRouteName = A(v, "routeName", !0, n.D.spa)),
-                  (g.setPageViewName = function (t, r) {
+                  (h.addPageAction = A(m, "addPageAction", !0, n.D.pageAction)),
+                  (h.setCurrentRouteName = A(m, "routeName", !0, n.D.spa)),
+                  (h.setPageViewName = function (t, r) {
                     if ("string" == typeof t)
                       return (
                         "/" !== t.charAt(0) && (t = "/" + t),
                         ((0, i.OP)(e).customTransaction =
                           (r || "http://custom.transaction") + t),
-                        A(v, "setPageViewName", !0)()
+                        A(m, "setPageViewName", !0)()
                       );
                   }),
-                  (g.setCustomAttribute = function (e, t) {
+                  (h.setCustomAttribute = function (e, t) {
                     let r =
                       arguments.length > 2 &&
                       void 0 !== arguments[2] &&
@@ -1146,7 +1845,7 @@ NREUM.info = {
                         )
                       );
                   }),
-                  (g.setUserId = function (e) {
+                  (h.setUserId = function (e) {
                     if ("string" == typeof e || null === e)
                       return b("enduser.id", e, "setUserId", !0);
                     (0, l.Z)(
@@ -1156,7 +1855,7 @@ NREUM.info = {
                       )
                     );
                   }),
-                  (g.setApplicationVersion = function (e) {
+                  (h.setApplicationVersion = function (e) {
                     if ("string" == typeof e || null === e)
                       return b(
                         "application.version",
@@ -1171,10 +1870,10 @@ NREUM.info = {
                       )
                     );
                   }),
-                  (g.start = (e) => {
+                  (h.start = (e) => {
                     try {
                       const t = e ? "defined" : "undefined";
-                      (0, a.p)(
+                      (0, o.p)(
                         f.xS,
                         ["API/start/".concat(t, "/called")],
                         void 0,
@@ -1204,15 +1903,15 @@ NREUM.info = {
                       (0, l.Z)("An unexpected issue occurred", e);
                     }
                   }),
-                  (g.recordReplay = function () {
-                    (0, a.p)(
+                  (h.recordReplay = function () {
+                    (0, o.p)(
                       f.xS,
                       ["API/recordReplay/called"],
                       void 0,
                       n.D.metrics,
                       p
                     ),
-                      (0, a.p)(
+                      (0, o.p)(
                         "recordReplay",
                         [],
                         void 0,
@@ -1220,50 +1919,50 @@ NREUM.info = {
                         p
                       );
                   }),
-                  (g.pauseReplay = function () {
-                    (0, a.p)(
+                  (h.pauseReplay = function () {
+                    (0, o.p)(
                       f.xS,
                       ["API/pauseReplay/called"],
                       void 0,
                       n.D.metrics,
                       p
                     ),
-                      (0, a.p)("pauseReplay", [], void 0, n.D.sessionReplay, p);
+                      (0, o.p)("pauseReplay", [], void 0, n.D.sessionReplay, p);
                   }),
-                  (g.interaction = function () {
+                  (h.interaction = function () {
                     return new y().get();
                   });
                 var w = (y.prototype = {
                   createTracer: function (e, t) {
                     var r = {},
                       i = this,
-                      o = "function" == typeof t;
+                      a = "function" == typeof t;
                     return (
-                      (0, a.p)(
+                      (0, o.p)(
                         f.xS,
                         ["API/createTracer/called"],
                         void 0,
                         n.D.metrics,
                         p
                       ),
-                      (0, a.p)(m + "tracer", [(0, s.z)(), e, r], i, n.D.spa, p),
+                      (0, o.p)(v + "tracer", [(0, s.z)(), e, r], i, n.D.spa, p),
                       function () {
                         if (
-                          (h.emit(
-                            (o ? "" : "no-") + "fn-start",
-                            [(0, s.z)(), i, o],
+                          (g.emit(
+                            (a ? "" : "no-") + "fn-start",
+                            [(0, s.z)(), i, a],
                             r
                           ),
-                          o)
+                          a)
                         )
                           try {
                             return t.apply(this, arguments);
                           } catch (e) {
                             throw (
-                              (h.emit("fn-err", [arguments, this, e], r), e)
+                              (g.emit("fn-err", [arguments, this, e], r), e)
                             );
                           } finally {
-                            h.emit("fn-end", [(0, s.z)()], r);
+                            g.emit("fn-end", [(0, s.z)()], r);
                           }
                       }
                     );
@@ -1272,7 +1971,7 @@ NREUM.info = {
                 function A(e, t, r, i) {
                   return function () {
                     return (
-                      (0, a.p)(
+                      (0, o.p)(
                         f.xS,
                         ["API/" + t + "/called"],
                         void 0,
@@ -1280,7 +1979,7 @@ NREUM.info = {
                         p
                       ),
                       i &&
-                        (0, a.p)(
+                        (0, o.p)(
                           e + t,
                           [(0, s.z)(), ...arguments],
                           r ? null : this,
@@ -1291,8 +1990,8 @@ NREUM.info = {
                     );
                   };
                 }
-                function _() {
-                  r.e(75)
+                function x() {
+                  r.e(111)
                     .then(r.bind(r, 7438))
                     .then((t) => {
                       let { setAPI: r } = t;
@@ -1314,18 +2013,18 @@ NREUM.info = {
                     "end",
                     "get",
                   ].forEach((e) => {
-                    w[e] = A(m, e, void 0, n.D.spa);
+                    w[e] = A(v, e, void 0, n.D.spa);
                   }),
-                  (g.noticeError = function (e, t) {
+                  (h.noticeError = function (e, t) {
                     "string" == typeof e && (e = new Error(e)),
-                      (0, a.p)(
+                      (0, o.p)(
                         f.xS,
                         ["API/noticeError/called"],
                         void 0,
                         n.D.metrics,
                         p
                       ),
-                      (0, a.p)(
+                      (0, o.p)(
                         "err",
                         [e, (0, s.z)(), !1, t],
                         void 0,
@@ -1333,12 +2032,12 @@ NREUM.info = {
                         p
                       );
                   }),
-                  d.il ? (0, u.b2)(() => _(), !0) : _(),
-                  g
+                  d.il ? (0, u.b2)(() => x(), !0) : x(),
+                  h
                 );
               })(e.agentIdentifier, y)),
-            void 0 === e.exposed && (e.exposed = E),
-            (m = !0);
+            void 0 === e.exposed && (e.exposed = _),
+            (v = !0);
         }
       },
       1926: (e, t, r) => {
@@ -1380,8 +2079,8 @@ NREUM.info = {
   function i(e) {
     var t = n[e];
     if (void 0 !== t) return t.exports;
-    var a = (n[e] = { exports: {} });
-    return r[e](a, a.exports, i), a.exports;
+    var o = (n[e] = { exports: {} });
+    return r[e](o, o.exports, i), o.exports;
   }
   (i.m = r),
     (i.d = (e, t) => {
@@ -1393,15 +2092,17 @@ NREUM.info = {
     (i.f = {}),
     (i.e = (e) =>
       Promise.all(Object.keys(i.f).reduce((t, r) => (i.f[r](e, t), t), []))),
-    (i.u = (e) => "nr-rum-1.250.0.min.js"),
+    (i.u = (e) =>
+      ({ 111: "nr-spa", 164: "nr-spa-compressor", 433: "nr-spa-recorder" }[e] +
+      "-1.250.0.min.js")),
     (i.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t)),
     (e = {}),
     (t = "NRBA-1.250.0.PROD:"),
-    (i.l = (r, n, a, o) => {
+    (i.l = (r, n, o, a) => {
       if (e[r]) e[r].push(n);
       else {
         var s, c;
-        if (void 0 !== a)
+        if (void 0 !== o)
           for (
             var u = document.getElementsByTagName("script"), d = 0;
             d < u.length;
@@ -1410,7 +2111,7 @@ NREUM.info = {
             var l = u[d];
             if (
               l.getAttribute("src") == r ||
-              l.getAttribute("data-webpack") == t + a
+              l.getAttribute("data-webpack") == t + o
             ) {
               s = l;
               break;
@@ -1419,19 +2120,21 @@ NREUM.info = {
         if (!s) {
           c = !0;
           var f = {
-            75: "sha512-2/f4ks7UUkz/V5qC88wpBuGtLglDVUbydMJpZeUMyA/1ChnpO/Q00ZY/7dABphVkZ8zpnV6zFxxikFwJCMiQRg==",
+            111: "sha512-VzAAF1LCxsuK2besFoBGhujeJumhOrBrIjFLbkx79lpNPBgfRM8NQ+zxV3oVtbIpclKSEEjI6LWGBzLivoqDqw==",
+            433: "sha512-6vufZOcF6JBu12rByPpOGR7WV+Teena/OA0N+oEmjbl6Du9C1s7Zc8XPaDY9WqZ7EgtUtDyeRLd8FEukA4mphQ==",
+            164: "sha512-TACjgebgisQKqnowbjt0Zs1hS1HnCJnGEdI68dZ39nHU9g1LAb6er7eSNibSGDFBPBwhgKsBkEcteWtHRKc3Cw==",
           };
           ((s = document.createElement("script")).charset = "utf-8"),
             (s.timeout = 120),
             i.nc && s.setAttribute("nonce", i.nc),
-            s.setAttribute("data-webpack", t + a),
+            s.setAttribute("data-webpack", t + o),
             (s.src = r),
             0 !== s.src.indexOf(window.location.origin + "/") &&
               (s.crossOrigin = "anonymous"),
-            f[o] && (s.integrity = f[o]);
+            f[a] && (s.integrity = f[a]);
         }
         e[r] = [n];
-        var g = (t, n) => {
+        var h = (t, n) => {
             (s.onerror = s.onload = null), clearTimeout(p);
             var i = e[r];
             if (
@@ -1443,11 +2146,11 @@ NREUM.info = {
               return t(n);
           },
           p = setTimeout(
-            g.bind(null, void 0, { type: "timeout", target: s }),
+            h.bind(null, void 0, { type: "timeout", target: s }),
             12e4
           );
-        (s.onerror = g.bind(null, s.onerror)),
-          (s.onload = g.bind(null, s.onload)),
+        (s.onerror = h.bind(null, s.onerror)),
+          (s.onload = h.bind(null, s.onload)),
           c && document.head.appendChild(s);
       }
     }),
@@ -1459,27 +2162,27 @@ NREUM.info = {
     }),
     (i.p = "https://js-agent.newrelic.com/"),
     (() => {
-      var e = { 50: 0, 832: 0 };
+      var e = { 801: 0, 92: 0 };
       i.f.j = (t, r) => {
         var n = i.o(e, t) ? e[t] : void 0;
         if (0 !== n)
           if (n) r.push(n[2]);
           else {
-            var a = new Promise((r, i) => (n = e[t] = [r, i]));
-            r.push((n[2] = a));
-            var o = i.p + i.u(t),
+            var o = new Promise((r, i) => (n = e[t] = [r, i]));
+            r.push((n[2] = o));
+            var a = i.p + i.u(t),
               s = new Error();
             i.l(
-              o,
+              a,
               (r) => {
                 if (i.o(e, t) && (0 !== (n = e[t]) && (e[t] = void 0), n)) {
-                  var a = r && ("load" === r.type ? "missing" : r.type),
-                    o = r && r.target && r.target.src;
+                  var o = r && ("load" === r.type ? "missing" : r.type),
+                    a = r && r.target && r.target.src;
                   (s.message =
-                    "Loading chunk " + t + " failed.\n(" + a + ": " + o + ")"),
+                    "Loading chunk " + t + " failed.\n(" + o + ": " + a + ")"),
                     (s.name = "ChunkLoadError"),
-                    (s.type = a),
-                    (s.request = o),
+                    (s.type = o),
+                    (s.request = a),
                     n[1](s);
                 }
               },
@@ -1490,15 +2193,15 @@ NREUM.info = {
       };
       var t = (t, r) => {
           var n,
-            a,
-            [o, s, c] = r,
+            o,
+            [a, s, c] = r,
             u = 0;
-          if (o.some((t) => 0 !== e[t])) {
+          if (a.some((t) => 0 !== e[t])) {
             for (n in s) i.o(s, n) && (i.m[n] = s[n]);
             if (c) c(i);
           }
-          for (t && t(r); u < o.length; u++)
-            (a = o[u]), i.o(e, a) && e[a] && e[a][0](), (e[a] = 0);
+          for (t && t(r); u < a.length; u++)
+            (o = a[u]), i.o(e, o) && e[o] && e[o][0](), (e[o] = 0);
         },
         r = (self["webpackChunk:NRBA-1.250.0.PROD"] =
           self["webpackChunk:NRBA-1.250.0.PROD"] || []);
@@ -1554,11 +2257,11 @@ NREUM.info = {
       }
       var r = i(3325),
         n = i(234);
-      const a = Object.values(r.D);
-      function o(e) {
+      const o = Object.values(r.D);
+      function a(e) {
         const t = {};
         return (
-          a.forEach((r) => {
+          o.forEach((r) => {
             t[r] = (function (e, t) {
               return !1 !== (0, n.Mt)(t, "".concat(e, ".enabled"));
             })(r, e);
@@ -1603,17 +2306,17 @@ NREUM.info = {
           const r =
             l.il &&
             !0 === (0, n.Mt)(this.agentIdentifier, "privacy.cookies_enabled");
-          let a;
+          let o;
           this.onAggregateImported = new Promise((e) => {
-            a = e;
+            o = e;
           });
-          const o = async () => {
+          const a = async () => {
             let n;
             try {
               if (r) {
                 const { setupAgentSession: e } = await i
-                  .e(75)
-                  .then(i.bind(i, 957));
+                  .e(111)
+                  .then(i.bind(i, 1656));
                 n = e(this.agentIdentifier);
               }
             } catch (t) {
@@ -1625,10 +2328,10 @@ NREUM.info = {
             try {
               if (!this.shouldImportAgg(this.featureName, n))
                 return (
-                  (0, c.L)(this.agentIdentifier, this.featureName), void a(!1)
+                  (0, c.L)(this.agentIdentifier, this.featureName), void o(!1)
                 );
               const { lazyFeatureLoader: e } = await i
-                  .e(75)
+                  .e(111)
                   .then(i.bind(i, 8582)),
                 { Aggregate: r } = await e(this.featureName, "aggregate");
               (this.featAggregate = new r(
@@ -1636,7 +2339,7 @@ NREUM.info = {
                 this.aggregator,
                 t
               )),
-                a(!0);
+                o(!0);
             } catch (t) {
               (0, e.Z)(
                 "Downloading and initializing ".concat(
@@ -1647,10 +2350,10 @@ NREUM.info = {
               ),
                 this.abortHandler?.(),
                 (0, c.L)(this.agentIdentifier, this.featureName),
-                a(!1);
+                o(!1);
             }
           };
-          l.il ? (0, d.b2)(() => o(), !0) : o();
+          l.il ? (0, d.b2)(() => a(), !0) : a();
         }
         shouldImportAgg(e, t) {
           return (
@@ -1661,49 +2364,49 @@ NREUM.info = {
           );
         }
       }
-      var g = i(7633);
+      var h = i(7633);
       class p extends f {
-        static featureName = g.t;
+        static featureName = h.t;
         constructor(e, t) {
           let r =
             !(arguments.length > 2 && void 0 !== arguments[2]) || arguments[2];
-          super(e, t, g.t, r), this.importAggregator();
+          super(e, t, h.t, r), this.importAggregator();
         }
       }
-      var h = i(1117),
-        v = i(1284);
-      class m extends h.w {
+      var g = i(1117),
+        m = i(1284);
+      class v extends g.w {
         constructor(e) {
           super(e), (this.aggregatedData = {});
         }
         store(e, t, r, n, i) {
-          var a = this.getBucket(e, t, r, i);
+          var o = this.getBucket(e, t, r, i);
           return (
-            (a.metrics = (function (e, t) {
+            (o.metrics = (function (e, t) {
               t || (t = { count: 0 });
               return (
                 (t.count += 1),
-                (0, v.D)(e, function (e, r) {
+                (0, m.D)(e, function (e, r) {
                   t[e] = b(r, t[e]);
                 }),
                 t
               );
-            })(n, a.metrics)),
-            a
+            })(n, o.metrics)),
+            o
           );
         }
         merge(e, t, r, n, i) {
-          var a = this.getBucket(e, t, n, i);
-          if (a.metrics) {
-            var o = a.metrics;
-            (o.count += r.count),
-              (0, v.D)(r, function (e, t) {
+          var o = this.getBucket(e, t, n, i);
+          if (o.metrics) {
+            var a = o.metrics;
+            (a.count += r.count),
+              (0, m.D)(r, function (e, t) {
                 if ("count" !== e) {
-                  var n = o[e],
+                  var n = a[e],
                     i = r[e];
                   i && !i.c
-                    ? (o[e] = b(i.t, n))
-                    : (o[e] = (function (e, t) {
+                    ? (a[e] = b(i.t, n))
+                    : (a[e] = (function (e, t) {
                         if (!t) return e;
                         t.c || (t = y(t.t));
                         return (
@@ -1714,10 +2417,10 @@ NREUM.info = {
                           (t.c += e.c),
                           t
                         );
-                      })(i, o[e]));
+                      })(i, a[e]));
                 }
               });
-          } else a.metrics = r;
+          } else o.metrics = r;
         }
         storeMetric(e, t, r, n) {
           var i = this.getBucket(e, t, r);
@@ -1766,38 +2469,38 @@ NREUM.info = {
         return { t: e, min: e, max: e, sos: e * e, c: 1 };
       }
       function w(e) {
-        return "object" != typeof e ? [] : (0, v.D)(e, A);
+        return "object" != typeof e ? [] : (0, m.D)(e, A);
       }
       function A(e, t) {
         return t;
       }
-      var _ = i(8632),
-        x = i(4402),
-        E = i(4351);
-      var D = i(5546),
-        k = i(7956),
-        j = i(3239),
-        S = i(7894),
-        R = i(9251);
-      class T extends f {
-        static featureName = R.t;
+      var x = i(8632),
+        E = i(4402),
+        _ = i(4351);
+      var T = i(5546),
+        S = i(7956),
+        R = i(3239),
+        D = i(7894),
+        N = i(9251);
+      class O extends f {
+        static featureName = N.t;
         constructor(e, t) {
           let r =
             !(arguments.length > 2 && void 0 !== arguments[2]) || arguments[2];
-          super(e, t, R.t, r),
+          super(e, t, N.t, r),
             l.il &&
-              ((0, k.N)(
-                () => (0, D.p)("docHidden", [(0, S.z)()], void 0, R.t, this.ee),
+              ((0, S.N)(
+                () => (0, T.p)("docHidden", [(0, D.z)()], void 0, N.t, this.ee),
                 !0
               ),
-              (0, j.bP)("pagehide", () =>
-                (0, D.p)("winPagehide", [(0, S.z)()], void 0, R.t, this.ee)
+              (0, R.bP)("pagehide", () =>
+                (0, T.p)("winPagehide", [(0, D.z)()], void 0, N.t, this.ee)
               ),
               this.importAggregator());
         }
       }
       var I = i(3081);
-      class P extends f {
+      class C extends f {
         static featureName = I.t9;
         constructor(e, t) {
           let r =
@@ -1805,20 +2508,660 @@ NREUM.info = {
           super(e, t, I.t9, r), this.importAggregator();
         }
       }
+      var j = i(6660);
+      class P {
+        constructor(e, t, r, n) {
+          (this.name = "UncaughtError"),
+            (this.message = e),
+            (this.sourceURL = t),
+            (this.line = r),
+            (this.column = n);
+        }
+      }
+      class k extends f {
+        static featureName = j.t;
+        #t = new Set();
+        constructor(e, t) {
+          let n =
+            !(arguments.length > 2 && void 0 !== arguments[2]) || arguments[2];
+          super(e, t, j.t, n);
+          try {
+            this.removeOnAbort = new AbortController();
+          } catch (e) {}
+          this.ee.on("fn-err", (e, t, n) => {
+            this.abortHandler &&
+              !this.#t.has(n) &&
+              (this.#t.add(n),
+              (0, T.p)(
+                "err",
+                [this.#r(n), (0, D.z)()],
+                void 0,
+                r.D.jserrors,
+                this.ee
+              ));
+          }),
+            this.ee.on("internal-error", (e) => {
+              this.abortHandler &&
+                (0, T.p)(
+                  "ierr",
+                  [this.#r(e), (0, D.z)(), !0],
+                  void 0,
+                  r.D.jserrors,
+                  this.ee
+                );
+            }),
+            l._A.addEventListener(
+              "unhandledrejection",
+              (e) => {
+                this.abortHandler &&
+                  (0, T.p)(
+                    "err",
+                    [
+                      this.#n(e),
+                      (0, D.z)(),
+                      !1,
+                      { unhandledPromiseRejection: 1 },
+                    ],
+                    void 0,
+                    r.D.jserrors,
+                    this.ee
+                  );
+              },
+              (0, R.m$)(!1, this.removeOnAbort?.signal)
+            ),
+            l._A.addEventListener(
+              "error",
+              (e) => {
+                this.abortHandler &&
+                  (this.#t.has(e.error)
+                    ? this.#t.delete(e.error)
+                    : (0, T.p)(
+                        "err",
+                        [this.#i(e), (0, D.z)()],
+                        void 0,
+                        r.D.jserrors,
+                        this.ee
+                      ));
+              },
+              (0, R.m$)(!1, this.removeOnAbort?.signal)
+            ),
+            (this.abortHandler = this.#o),
+            this.importAggregator();
+        }
+        #o() {
+          this.removeOnAbort?.abort(),
+            this.#t.clear(),
+            (this.abortHandler = void 0);
+        }
+        #r(e) {
+          return e instanceof Error
+            ? e
+            : void 0 !== e?.message
+            ? new P(
+                e.message,
+                e.filename || e.sourceURL,
+                e.lineno || e.line,
+                e.colno || e.col
+              )
+            : new P("string" == typeof e ? e : (0, _.P)(e));
+        }
+        #n(e) {
+          let t = "Unhandled Promise Rejection: ";
+          if (e?.reason instanceof Error)
+            try {
+              return (e.reason.message = t + e.reason.message), e.reason;
+            } catch (t) {
+              return e.reason;
+            }
+          if (void 0 === e.reason) return new P(t);
+          const r = this.#r(e.reason);
+          return (r.message = t + r.message), r;
+        }
+        #i(e) {
+          return e.error instanceof Error
+            ? e.error
+            : new P(e.message, e.filename, e.lineno, e.colno);
+        }
+      }
+      var H = i(2210);
+      let M = 1;
+      const L = "nr@id";
+      function z(e) {
+        const t = typeof e;
+        return !e || ("object" !== t && "function" !== t)
+          ? -1
+          : e === l._A
+          ? 0
+          : (0, H.X)(e, L, function () {
+              return M++;
+            });
+      }
+      function F(e) {
+        if ("string" == typeof e && e.length) return e.length;
+        if ("object" == typeof e) {
+          if (
+            "undefined" != typeof ArrayBuffer &&
+            e instanceof ArrayBuffer &&
+            e.byteLength
+          )
+            return e.byteLength;
+          if ("undefined" != typeof Blob && e instanceof Blob && e.size)
+            return e.size;
+          if (!("undefined" != typeof FormData && e instanceof FormData))
+            try {
+              return (0, _.P)(e).length;
+            } catch (e) {
+              return;
+            }
+        }
+      }
+      var B = i(1214),
+        U = i(7243);
+      class Z {
+        constructor(e) {
+          this.agentIdentifier = e;
+        }
+        generateTracePayload(e) {
+          if (!this.shouldGenerateTrace(e)) return null;
+          var t = (0, n.DL)(this.agentIdentifier);
+          if (!t) return null;
+          var r = (t.accountID || "").toString() || null,
+            i = (t.agentID || "").toString() || null,
+            o = (t.trustKey || "").toString() || null;
+          if (!r || !i) return null;
+          var a = (0, E.M)(),
+            s = (0, E.Ht)(),
+            c = Date.now(),
+            u = { spanId: a, traceId: s, timestamp: c };
+          return (
+            (e.sameOrigin ||
+              (this.isAllowedOrigin(e) &&
+                this.useTraceContextHeadersForCors())) &&
+              ((u.traceContextParentHeader =
+                this.generateTraceContextParentHeader(a, s)),
+              (u.traceContextStateHeader = this.generateTraceContextStateHeader(
+                a,
+                c,
+                r,
+                i,
+                o
+              ))),
+            ((e.sameOrigin && !this.excludeNewrelicHeader()) ||
+              (!e.sameOrigin &&
+                this.isAllowedOrigin(e) &&
+                this.useNewrelicHeaderForCors())) &&
+              (u.newrelicHeader = this.generateTraceHeader(a, s, c, r, i, o)),
+            u
+          );
+        }
+        generateTraceContextParentHeader(e, t) {
+          return "00-" + t + "-" + e + "-01";
+        }
+        generateTraceContextStateHeader(e, t, r, n, i) {
+          return i + "@nr=0-1-" + r + "-" + n + "-" + e + "----" + t;
+        }
+        generateTraceHeader(e, t, r, n, i, o) {
+          if (!("function" == typeof l._A?.btoa)) return null;
+          var a = {
+            v: [0, 1],
+            d: { ty: "Browser", ac: n, ap: i, id: e, tr: t, ti: r },
+          };
+          return o && n !== o && (a.d.tk = o), btoa((0, _.P)(a));
+        }
+        shouldGenerateTrace(e) {
+          return this.isDtEnabled() && this.isAllowedOrigin(e);
+        }
+        isAllowedOrigin(e) {
+          var t = !1,
+            r = {};
+          if (
+            ((0, n.Mt)(this.agentIdentifier, "distributed_tracing") &&
+              (r = (0, n.P_)(this.agentIdentifier).distributed_tracing),
+            e.sameOrigin)
+          )
+            t = !0;
+          else if (r.allowed_origins instanceof Array)
+            for (var i = 0; i < r.allowed_origins.length; i++) {
+              var o = (0, U.e)(r.allowed_origins[i]);
+              if (
+                e.hostname === o.hostname &&
+                e.protocol === o.protocol &&
+                e.port === o.port
+              ) {
+                t = !0;
+                break;
+              }
+            }
+          return t;
+        }
+        isDtEnabled() {
+          var e = (0, n.Mt)(this.agentIdentifier, "distributed_tracing");
+          return !!e && !!e.enabled;
+        }
+        excludeNewrelicHeader() {
+          var e = (0, n.Mt)(this.agentIdentifier, "distributed_tracing");
+          return !!e && !!e.exclude_newrelic_header;
+        }
+        useNewrelicHeaderForCors() {
+          var e = (0, n.Mt)(this.agentIdentifier, "distributed_tracing");
+          return !!e && !1 !== e.cors_use_newrelic_header;
+        }
+        useTraceContextHeadersForCors() {
+          var e = (0, n.Mt)(this.agentIdentifier, "distributed_tracing");
+          return !!e && !!e.cors_use_tracecontext_headers;
+        }
+      }
+      var V = i(7825),
+        q = ["load", "error", "abort", "timeout"],
+        G = q.length,
+        W = n.Yu.REQ,
+        X = n.Yu.XHR;
+      class K extends f {
+        static featureName = V.t;
+        constructor(e, t) {
+          let i =
+            !(arguments.length > 2 && void 0 !== arguments[2]) || arguments[2];
+          if ((super(e, t, V.t, i), (0, n.OP)(e).xhrWrappable)) {
+            (this.dt = new Z(e)),
+              (this.handler = (e, t, r, n) => (0, T.p)(e, t, r, n, this.ee));
+            try {
+              const e = {
+                xmlhttprequest: "xhr",
+                fetch: "fetch",
+                beacon: "beacon",
+              };
+              l._A?.performance?.getEntriesByType("resource").forEach((t) => {
+                if (t.initiatorType in e && 0 !== t.responseStatus) {
+                  const n = { status: t.responseStatus },
+                    i = {
+                      rxSize: t.transferSize,
+                      duration: Math.floor(t.duration),
+                      cbTime: 0,
+                    };
+                  Y(n, t.name),
+                    this.handler(
+                      "xhr",
+                      [n, i, t.startTime, t.responseEnd, e[t.initiatorType]],
+                      void 0,
+                      r.D.ajax
+                    );
+                }
+              });
+            } catch (e) {}
+            (0, B.u5)(this.ee),
+              (0, B.Kf)(this.ee),
+              (function (e, t, i, o) {
+                function a(e) {
+                  var t = this;
+                  (t.totalCbs = 0),
+                    (t.called = 0),
+                    (t.cbTime = 0),
+                    (t.end = x),
+                    (t.ended = !1),
+                    (t.xhrGuids = {}),
+                    (t.lastSize = null),
+                    (t.loadCaptureCalled = !1),
+                    (t.params = this.params || {}),
+                    (t.metrics = this.metrics || {}),
+                    e.addEventListener(
+                      "load",
+                      function (r) {
+                        E(t, e);
+                      },
+                      (0, R.m$)(!1)
+                    ),
+                    l.IF ||
+                      e.addEventListener(
+                        "progress",
+                        function (e) {
+                          t.lastSize = e.loaded;
+                        },
+                        (0, R.m$)(!1)
+                      );
+                }
+                function s(e) {
+                  (this.params = { method: e[0] }),
+                    Y(this, e[1]),
+                    (this.metrics = {});
+                }
+                function c(t, r) {
+                  var i = (0, n.DL)(e);
+                  i.xpid &&
+                    this.sameOrigin &&
+                    r.setRequestHeader("X-NewRelic-ID", i.xpid);
+                  var a = o.generateTracePayload(this.parsedOrigin);
+                  if (a) {
+                    var s = !1;
+                    a.newrelicHeader &&
+                      (r.setRequestHeader("newrelic", a.newrelicHeader),
+                      (s = !0)),
+                      a.traceContextParentHeader &&
+                        (r.setRequestHeader(
+                          "traceparent",
+                          a.traceContextParentHeader
+                        ),
+                        a.traceContextStateHeader &&
+                          r.setRequestHeader(
+                            "tracestate",
+                            a.traceContextStateHeader
+                          ),
+                        (s = !0)),
+                      s && (this.dt = a);
+                  }
+                }
+                function u(e, r) {
+                  var n = this.metrics,
+                    i = e[0],
+                    o = this;
+                  if (n && i) {
+                    var a = F(i);
+                    a && (n.txSize = a);
+                  }
+                  (this.startTime = (0, D.z)()),
+                    (this.body = i),
+                    (this.listener = function (e) {
+                      try {
+                        "abort" !== e.type ||
+                          o.loadCaptureCalled ||
+                          (o.params.aborted = !0),
+                          ("load" !== e.type ||
+                            (o.called === o.totalCbs &&
+                              (o.onloadCalled ||
+                                "function" != typeof r.onload) &&
+                              "function" == typeof o.end)) &&
+                            o.end(r);
+                      } catch (e) {
+                        try {
+                          t.emit("internal-error", [e]);
+                        } catch (e) {}
+                      }
+                    });
+                  for (var s = 0; s < G; s++)
+                    r.addEventListener(q[s], this.listener, (0, R.m$)(!1));
+                }
+                function d(e, t, r) {
+                  (this.cbTime += e),
+                    t ? (this.onloadCalled = !0) : (this.called += 1),
+                    this.called !== this.totalCbs ||
+                      (!this.onloadCalled && "function" == typeof r.onload) ||
+                      "function" != typeof this.end ||
+                      this.end(r);
+                }
+                function f(e, t) {
+                  var r = "" + z(e) + !!t;
+                  this.xhrGuids &&
+                    !this.xhrGuids[r] &&
+                    ((this.xhrGuids[r] = !0), (this.totalCbs += 1));
+                }
+                function h(e, t) {
+                  var r = "" + z(e) + !!t;
+                  this.xhrGuids &&
+                    this.xhrGuids[r] &&
+                    (delete this.xhrGuids[r], (this.totalCbs -= 1));
+                }
+                function p() {
+                  this.endTime = (0, D.z)();
+                }
+                function g(e, r) {
+                  r instanceof X &&
+                    "load" === e[0] &&
+                    t.emit("xhr-load-added", [e[1], e[2]], r);
+                }
+                function m(e, r) {
+                  r instanceof X &&
+                    "load" === e[0] &&
+                    t.emit("xhr-load-removed", [e[1], e[2]], r);
+                }
+                function v(e, t, r) {
+                  t instanceof X &&
+                    ("onload" === r && (this.onload = !0),
+                    ("load" === (e[0] && e[0].type) || this.onload) &&
+                      (this.xhrCbStart = (0, D.z)()));
+                }
+                function b(e, r) {
+                  this.xhrCbStart &&
+                    t.emit(
+                      "xhr-cb-time",
+                      [(0, D.z)() - this.xhrCbStart, this.onload, r],
+                      r
+                    );
+                }
+                function y(e) {
+                  var t,
+                    r = e[1] || {};
+                  if (
+                    ("string" == typeof e[0]
+                      ? 0 === (t = e[0]).length &&
+                        l.il &&
+                        (t = "" + l._A.location.href)
+                      : e[0] && e[0].url
+                      ? (t = e[0].url)
+                      : l._A?.URL && e[0] && e[0] instanceof URL
+                      ? (t = e[0].href)
+                      : "function" == typeof e[0].toString &&
+                        (t = e[0].toString()),
+                    "string" == typeof t && 0 !== t.length)
+                  ) {
+                    t &&
+                      ((this.parsedOrigin = (0, U.e)(t)),
+                      (this.sameOrigin = this.parsedOrigin.sameOrigin));
+                    var n = o.generateTracePayload(this.parsedOrigin);
+                    if (n && (n.newrelicHeader || n.traceContextParentHeader))
+                      if (e[0] && e[0].headers)
+                        s(e[0].headers, n) && (this.dt = n);
+                      else {
+                        var i = {};
+                        for (var a in r) i[a] = r[a];
+                        (i.headers = new Headers(r.headers || {})),
+                          s(i.headers, n) && (this.dt = n),
+                          e.length > 1 ? (e[1] = i) : e.push(i);
+                      }
+                  }
+                  function s(e, t) {
+                    var r = !1;
+                    return (
+                      t.newrelicHeader &&
+                        (e.set("newrelic", t.newrelicHeader), (r = !0)),
+                      t.traceContextParentHeader &&
+                        (e.set("traceparent", t.traceContextParentHeader),
+                        t.traceContextStateHeader &&
+                          e.set("tracestate", t.traceContextStateHeader),
+                        (r = !0)),
+                      r
+                    );
+                  }
+                }
+                function w(e, t) {
+                  (this.params = {}),
+                    (this.metrics = {}),
+                    (this.startTime = (0, D.z)()),
+                    (this.dt = t),
+                    e.length >= 1 && (this.target = e[0]),
+                    e.length >= 2 && (this.opts = e[1]);
+                  var r,
+                    n = this.opts || {},
+                    i = this.target;
+                  "string" == typeof i
+                    ? (r = i)
+                    : "object" == typeof i && i instanceof W
+                    ? (r = i.url)
+                    : l._A?.URL &&
+                      "object" == typeof i &&
+                      i instanceof URL &&
+                      (r = i.href),
+                    Y(this, r);
+                  var o = (
+                    "" +
+                    ((i && i instanceof W && i.method) || n.method || "GET")
+                  ).toUpperCase();
+                  (this.params.method = o),
+                    (this.body = n.body),
+                    (this.txSize = F(n.body) || 0);
+                }
+                function A(e, t) {
+                  var n;
+                  (this.endTime = (0, D.z)()),
+                    this.params || (this.params = {}),
+                    (this.params.status = t ? t.status : 0),
+                    "string" == typeof this.rxSize &&
+                      this.rxSize.length > 0 &&
+                      (n = +this.rxSize);
+                  var o = {
+                    txSize: this.txSize,
+                    rxSize: n,
+                    duration: (0, D.z)() - this.startTime,
+                  };
+                  i(
+                    "xhr",
+                    [this.params, o, this.startTime, this.endTime, "fetch"],
+                    this,
+                    r.D.ajax
+                  );
+                }
+                function x(e) {
+                  var t = this.params,
+                    n = this.metrics;
+                  if (!this.ended) {
+                    this.ended = !0;
+                    for (var o = 0; o < G; o++)
+                      e.removeEventListener(q[o], this.listener, !1);
+                    t.aborted ||
+                      ((n.duration = (0, D.z)() - this.startTime),
+                      this.loadCaptureCalled || 4 !== e.readyState
+                        ? null == t.status && (t.status = 0)
+                        : E(this, e),
+                      (n.cbTime = this.cbTime),
+                      i(
+                        "xhr",
+                        [t, n, this.startTime, this.endTime, "xhr"],
+                        this,
+                        r.D.ajax
+                      ));
+                  }
+                }
+                function E(e, t) {
+                  e.params.status = t.status;
+                  var r = (function (e, t) {
+                    var r = e.responseType;
+                    return "json" === r && null !== t
+                      ? t
+                      : "arraybuffer" === r || "blob" === r || "json" === r
+                      ? F(e.response)
+                      : "text" === r || "" === r || void 0 === r
+                      ? F(e.responseText)
+                      : void 0;
+                  })(t, e.lastSize);
+                  if ((r && (e.metrics.rxSize = r), e.sameOrigin)) {
+                    var n = t.getResponseHeader("X-NewRelic-App-Data");
+                    n && (e.params.cat = n.split(", ").pop());
+                  }
+                  e.loadCaptureCalled = !0;
+                }
+                t.on("new-xhr", a),
+                  t.on("open-xhr-start", s),
+                  t.on("open-xhr-end", c),
+                  t.on("send-xhr-start", u),
+                  t.on("xhr-cb-time", d),
+                  t.on("xhr-load-added", f),
+                  t.on("xhr-load-removed", h),
+                  t.on("xhr-resolved", p),
+                  t.on("addEventListener-end", g),
+                  t.on("removeEventListener-end", m),
+                  t.on("fn-end", b),
+                  t.on("fetch-before-start", y),
+                  t.on("fetch-start", w),
+                  t.on("fn-start", v),
+                  t.on("fetch-done", A);
+              })(e, this.ee, this.handler, this.dt),
+              this.importAggregator();
+          }
+        }
+      }
+      function Y(e, t) {
+        var r = (0, U.e)(t),
+          n = e.params || e;
+        (n.hostname = r.hostname),
+          (n.port = r.port),
+          (n.protocol = r.protocol),
+          (n.host = r.hostname + ":" + r.port),
+          (n.pathname = r.pathname),
+          (e.parsedOrigin = r),
+          (e.sameOrigin = r.sameOrigin);
+      }
+      var J = i(3614);
+      const {
+        BST_RESOURCE: Q,
+        RESOURCE: ee,
+        START: te,
+        END: re,
+        FEATURE_NAME: ne,
+        FN_END: ie,
+        FN_START: oe,
+        PUSH_STATE: ae,
+      } = J;
+      var se = i(7056),
+        ce = i(7144);
+      class ue extends f {
+        static featureName = ce.t9;
+        constructor(e, t) {
+          let r =
+            !(arguments.length > 2 && void 0 !== arguments[2]) || arguments[2];
+          super(e, t, ce.t9, r);
+          try {
+            const e = JSON.parse(localStorage.getItem("NRBA_SESSION"));
+            e.sessionReplayMode !== se.IK.OFF
+              ? this.#a(e.sessionReplayMode)
+              : this.importAggregator({});
+          } catch (e) {
+            this.importAggregator({});
+          }
+        }
+        async #a(e) {
+          const { Recorder: t } = await i.e(433).then(i.bind(i, 4136));
+          (this.recorder = new t({
+            mode: e,
+            agentIdentifier: this.agentIdentifier,
+          })),
+            this.recorder.startRecording(),
+            this.importAggregator({ recorder: this.recorder });
+        }
+      }
+      var de = i(7836);
+      const {
+        FEATURE_NAME: le,
+        START: fe,
+        END: he,
+        BODY: pe,
+        CB_END: ge,
+        JS_TIME: me,
+        FETCH: ve,
+        FN_START: be,
+        CB_START: ye,
+        FN_END: we,
+      } = de;
+      var Ae = i(4649);
+      class xe extends f {
+        static featureName = Ae.t;
+        constructor(e, t) {
+          let r =
+            !(arguments.length > 2 && void 0 !== arguments[2]) || arguments[2];
+          super(e, t, Ae.t, r), this.importAggregator();
+        }
+      }
       new (class extends t {
         constructor(t) {
           let r =
             arguments.length > 1 && void 0 !== arguments[1]
               ? arguments[1]
-              : (0, x.ky)(16);
+              : (0, E.ky)(16);
           super(),
             l._A
               ? ((this.agentIdentifier = r),
-                (this.sharedAggregator = new m({
+                (this.sharedAggregator = new v({
                   agentIdentifier: this.agentIdentifier,
                 })),
                 (this.features = {}),
-                (0, _.h5)(r, this),
+                (0, x.h5)(r, this),
                 (this.desiredFeatures = new Set(t.features || [])),
                 this.desiredFeatures.add(p),
                 (0, s.j)(this, t, t.loaderType || "agent"),
@@ -1837,7 +3180,7 @@ NREUM.info = {
         }
         run() {
           try {
-            const t = o(this.agentIdentifier),
+            const t = a(this.agentIdentifier),
               n = [...this.desiredFeatures];
             n.sort((e, t) => r.p[e.featureName] - r.p[t.featureName]),
               n.forEach((n) => {
@@ -1864,7 +3207,7 @@ NREUM.info = {
                           " is enabled but one or more dependent features has been disabled ("
                         )
                         .concat(
-                          (0, E.P)(i),
+                          (0, _.P)(i),
                           "). This may cause unintended consequences or missing data..."
                         )
                     ),
@@ -1880,7 +3223,7 @@ NREUM.info = {
               t
             );
             for (const e in this.features) this.features[e].abortHandler?.();
-            const r = (0, _.fP)();
+            const r = (0, x.fP)();
             return (
               delete r.initializedAgents[this.agentIdentifier]?.api,
               delete r.initializedAgents[this.agentIdentifier]?.features,
@@ -1906,6 +3249,164 @@ NREUM.info = {
             "Call to agent api interaction failed. The spa feature is not currently initialized."
           );
         }
-      })({ features: [p, T, P], loaderType: "lite" });
+      })({
+        features: [
+          K,
+          p,
+          O,
+          class extends f {
+            static featureName = ne;
+            constructor(e, t) {
+              if (
+                (super(
+                  e,
+                  t,
+                  ne,
+                  !(arguments.length > 2 && void 0 !== arguments[2]) ||
+                    arguments[2]
+                ),
+                !l.il)
+              )
+                return;
+              const n = this.ee;
+              let i;
+              (0, B.QU)(n),
+                (this.eventsEE = (0, B.em)(n)),
+                this.eventsEE.on(oe, function (e, t) {
+                  this.bstStart = (0, D.z)();
+                }),
+                this.eventsEE.on(ie, function (e, t) {
+                  (0,
+                  T.p)("bst", [e[0], t, this.bstStart, (0, D.z)()], void 0, r.D.sessionTrace, n);
+                }),
+                n.on(ae + te, function (e) {
+                  (this.time = (0, D.z)()),
+                    (this.startPath = location.pathname + location.hash);
+                }),
+                n.on(ae + re, function (e) {
+                  (0,
+                  T.p)("bstHist", [location.pathname + location.hash, this.startPath, this.time], void 0, r.D.sessionTrace, n);
+                });
+              try {
+                (i = new PerformanceObserver((e) => {
+                  const t = e.getEntries();
+                  (0, T.p)(Q, [t], void 0, r.D.sessionTrace, n);
+                })),
+                  i.observe({ type: ee, buffered: !0 });
+              } catch (e) {}
+              this.importAggregator({ resourceObserver: i });
+            }
+          },
+          ue,
+          C,
+          xe,
+          k,
+          class extends f {
+            static featureName = le;
+            constructor(e, t) {
+              if (
+                (super(
+                  e,
+                  t,
+                  le,
+                  !(arguments.length > 2 && void 0 !== arguments[2]) ||
+                    arguments[2]
+                ),
+                !l.il)
+              )
+                return;
+              if (!(0, n.OP)(e).xhrWrappable) return;
+              try {
+                this.removeOnAbort = new AbortController();
+              } catch (e) {}
+              let r,
+                i = 0;
+              const o = this.ee.get("tracer"),
+                a = (0, B._L)(this.ee),
+                s = (0, B.Lg)(this.ee),
+                c = (0, B.BV)(this.ee),
+                u = (0, B.Kf)(this.ee),
+                d = this.ee.get("events"),
+                f = (0, B.u5)(this.ee),
+                h = (0, B.QU)(this.ee),
+                p = (0, B.Gm)(this.ee);
+              function g(e, t) {
+                h.emit("newURL", ["" + window.location, t]);
+              }
+              function m() {
+                i++, (r = window.location.hash), (this[be] = (0, D.z)());
+              }
+              function v() {
+                i--, window.location.hash !== r && g(0, !0);
+                var e = (0, D.z)();
+                (this[me] = ~~this[me] + e - this[be]), (this[we] = e);
+              }
+              function b(e, t) {
+                e.on(t, function () {
+                  this[t] = (0, D.z)();
+                });
+              }
+              this.ee.on(be, m),
+                s.on(ye, m),
+                a.on(ye, m),
+                this.ee.on(we, v),
+                s.on(ge, v),
+                a.on(ge, v),
+                this.ee.buffer([be, we, "xhr-resolved"], this.featureName),
+                d.buffer([be], this.featureName),
+                c.buffer(
+                  ["setTimeout" + he, "clearTimeout" + fe, be],
+                  this.featureName
+                ),
+                u.buffer([be, "new-xhr", "send-xhr" + fe], this.featureName),
+                f.buffer(
+                  [ve + fe, ve + "-done", ve + pe + fe, ve + pe + he],
+                  this.featureName
+                ),
+                h.buffer(["newURL"], this.featureName),
+                p.buffer([be], this.featureName),
+                s.buffer(
+                  ["propagate", ye, ge, "executor-err", "resolve" + fe],
+                  this.featureName
+                ),
+                o.buffer([be, "no-" + be], this.featureName),
+                a.buffer(
+                  ["new-jsonp", "cb-start", "jsonp-error", "jsonp-end"],
+                  this.featureName
+                ),
+                b(f, ve + fe),
+                b(f, ve + "-done"),
+                b(a, "new-jsonp"),
+                b(a, "jsonp-end"),
+                b(a, "cb-start"),
+                h.on("pushState-end", g),
+                h.on("replaceState-end", g),
+                window.addEventListener(
+                  "hashchange",
+                  g,
+                  (0, R.m$)(!0, this.removeOnAbort?.signal)
+                ),
+                window.addEventListener(
+                  "load",
+                  g,
+                  (0, R.m$)(!0, this.removeOnAbort?.signal)
+                ),
+                window.addEventListener(
+                  "popstate",
+                  function () {
+                    g(0, i > 1);
+                  },
+                  (0, R.m$)(!0, this.removeOnAbort?.signal)
+                ),
+                (this.abortHandler = this.#o),
+                this.importAggregator();
+            }
+            #o() {
+              this.removeOnAbort?.abort(), (this.abortHandler = void 0);
+            }
+          },
+        ],
+        loaderType: "spa",
+      });
     })();
 })();
