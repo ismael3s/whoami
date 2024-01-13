@@ -32,13 +32,14 @@ export default async function RootLayout({
     <html lang={locale}>
       <Head>
         <title>Ismael Santana</title>
+      </Head>
+      <head>
         <script
           src="/static/scripts/new-relic.js"
           type="text/javascript"
           async
         />
-      </Head>
-      <Script src="/static/scripts/new-relic.js" type="text/javascript" />
+      </head>
       <body className={`${inter.className} bg-bprimary`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header locale={locale} />
