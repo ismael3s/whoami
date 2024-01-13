@@ -10,16 +10,16 @@ const headerItem = tv({
   variants: {
     active: {
       true: "opacity-100",
-      false: "opacity-80"
-    }
+      false: "opacity-80",
+    },
   },
   defaultVariants: {
-    active: false
-  }
+    active: false,
+  },
 });
 const enum LanguageEnum {
   PT_BR = "pt-br",
-  EN = "en"
+  EN = "en",
 }
 
 type Props = {
@@ -27,24 +27,7 @@ type Props = {
 };
 
 export const Header = ({ locale: currentLanguage }: Props) => {
-  const t = useTranslations("Header");
   const activeSection = useHeaderStore((state) => state.activeSection);
-  const sectionsRefs = useHeaderStore((state) => state.sectionsRefs);
-  const blockOptions: {
-    [key in HeaderSectionEnum]: ScrollLogicalPosition;
-  } = {
-    [HeaderSectionEnum.ABOUT]: "center",
-    [HeaderSectionEnum.SKILLS]: "center",
-    [HeaderSectionEnum.EXPERIENCES]: "start"
-  };
-
-  function handleSectionChange(section: HeaderSectionEnum) {
-    if (activeSection === section) return;
-    sectionsRefs[section]?.current?.scrollIntoView({
-      behavior: "smooth",
-      block: blockOptions[section] || "center"
-    });
-  }
 
   return (
     <header className="bg-bsecondary sticky top-0 z-50">
@@ -81,7 +64,7 @@ export const Header = ({ locale: currentLanguage }: Props) => {
         <ul className="flex items-center gap-5 text-tsecondary">
           <li
             className={headerItem({
-              active: currentLanguage === LanguageEnum.PT_BR
+              active: currentLanguage === LanguageEnum.PT_BR,
             })}
           >
             <Link href={`/${LanguageEnum.PT_BR}`} scroll={false}>
@@ -90,7 +73,7 @@ export const Header = ({ locale: currentLanguage }: Props) => {
           </li>
           <li
             className={headerItem({
-              active: currentLanguage === LanguageEnum.EN
+              active: currentLanguage === LanguageEnum.EN,
             })}
           >
             <Link href={`/${LanguageEnum.EN}`} scroll={false}>

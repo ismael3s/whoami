@@ -5,6 +5,9 @@ import LinkedinSvg from "../../.././../../public/Linkedin.svg";
 import { BiLogoDevTo, BiLogoGmail, BiLogoWhatsapp } from "react-icons/bi";
 export const SocialMedia = () => {
   function openURL(url: string, target = "_blank") {
+    if (Math.random() > 0.5) {
+      throw new Error("Error");
+    }
     const win = window.open(url, target);
     win?.focus();
   }
