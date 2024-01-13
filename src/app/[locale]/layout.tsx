@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from "next-intl";
 import Head from "next/head";
 import { Header } from "../components/Header";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,11 @@ export default async function RootLayout({
     <html lang={locale}>
       <Head>
         <title>Ismael Santana</title>
+        <script
+          src="/static/scripts/new-relic.js"
+          type="text/javascript"
+          async
+        />
       </Head>
       <body className={`${inter.className} bg-bprimary`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
