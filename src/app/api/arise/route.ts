@@ -1,5 +1,7 @@
 import axios from "axios";
 
+export const revalidate = 60;
+
 export async function GET() {
   const { data } = await axios.get(
     "https://api.github.com/repos/ismael3s/dockerise/releases/latest"
