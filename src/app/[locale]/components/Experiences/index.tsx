@@ -1,46 +1,46 @@
 import { Text } from "@/app/components/Text";
 import { useHeaderStore } from "@/zustand/store";
-import { work } from "@prisma/client";
+// import { work } from "@prisma/client";
 import { twMerge } from "tailwind-merge";
 import { formatWorkingPeriod } from "../../lib/formatWorkData";
 import { useLocale, useTranslations } from "next-intl";
 
 type Props = {
-  work: work;
+  // work: work;
   isOnRightSide?: boolean;
   locale: string;
 };
-export const Experience = ({ isOnRightSide, work, locale }: Props) => {
-  return (
-    <div
-      className={twMerge(
-        "flex flex-col gap-y-2  xl:w-auto xl:text-end ",
-        isOnRightSide
-          ? " xl:ml-6 my-8 xl:my-16 xl:text-start"
-          : "ml-auto xl:mr-6"
-      )}
-    >
-      <Text
-        weight="bold"
-        fontSize="xs"
-        fontColor="secondary"
-        className="md:text-xl"
-      >
-        {work.job_role}
-      </Text>
-      <Text weight="bold" fontSize="exs" as={"span"}>
-        {work.company}
-      </Text>
-      <Text weight="medium" fontSize="exs" as={"span"} className="">
-        {formatWorkingPeriod(work.start_date, work.end_date, locale)}
-      </Text>
+// export const Experience = ({ isOnRightSide, locale }: Props) => {
+//   return (
+//     <div
+//       className={twMerge(
+//         "flex flex-col gap-y-2  xl:w-auto xl:text-end ",
+//         isOnRightSide
+//           ? " xl:ml-6 my-8 xl:my-16 xl:text-start"
+//           : "ml-auto xl:mr-6"
+//       )}
+//     >
+//       <Text
+//         weight="bold"
+//         fontSize="xs"
+//         fontColor="secondary"
+//         className="md:text-xl"
+//       >
+//         {work.job_role}
+//       </Text>
+//       <Text weight="bold" fontSize="exs" as={"span"}>
+//         {work.company}
+//       </Text>
+//       <Text weight="medium" fontSize="exs" as={"span"} className="">
+//         {formatWorkingPeriod(work.start_date, work.end_date, locale)}
+//       </Text>
 
-      <Text fontSize="exs" as={"span"} className="">
-        {work.description}
-      </Text>
-    </div>
-  );
-};
+//       <Text fontSize="exs" as={"span"} className="">
+//         {work.description}
+//       </Text>
+//     </div>
+//   );
+// };
 
 export const Experiences = ({ works }: { works: any[] }) => {
   const locale = useLocale();
@@ -70,11 +70,11 @@ export const Experiences = ({ works }: { works: any[] }) => {
                 index % 2 === 0 ? `xl:border-r-[1px]  xl:border-r-border` : ""
               }
             >
-              <Experience
+              {/* <Experience
                 isOnRightSide={index % 2 !== 0}
-                work={work}
+                // work={work}
                 locale={locale}
-              />
+              /> */}
             </div>
           ))}
       </div>

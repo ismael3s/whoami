@@ -1,6 +1,4 @@
 import axios from "axios";
-import { NextApiResponse } from "next";
-import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {
   const { data } = await axios.get(
@@ -13,5 +11,10 @@ export async function GET() {
   const arraybuffer = await axios.get(downloadUrl, {
     responseType: "arraybuffer"
   });
-  return Response.json(JSON.parse(new TextDecoder().decode(arraybuffer.data)));
+  const result = new TextDecoder().decode(arraybuffer.data);
+  return new Response(result, {
+    headers: {
+      "content-type": "application/json"
+    }
+  });
 }
